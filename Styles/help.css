@@ -1,0 +1,94 @@
+.help {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2B2F44;
+    z-index: 3;
+    display: none;
+    overflow: scroll;
+}
+
+.help-exit-button {
+    position: absolute;
+    top: 33px;
+    right: 33px;
+    color: black;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    padding: 0 10px 0 10px;
+    height: 25px;
+}
+
+.help > h1 {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin: 25px;
+}
+
+.help-section { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 20px;
+    gap: 20px;
+}
+
+hr { 
+    color: #FFF;
+    height: 1.5px;
+    background-color: #FFF;
+    border: none;
+    margin-top: 0;
+}
+
+.left {
+    position: relative;
+}
+
+.card-outer.overlap:nth-child(1) {
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+
+.card-outer.overlap:nth-child(2) {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+
+.card-outer.overlap:nth-child(3) {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.card-outer.overlap:nth-child(4) {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+
+.help-section-content > h2 { 
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.help-section-content > p { 
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+}
+
+.help-section-content.right {
+    width: calc(80vw - 40px);
+}

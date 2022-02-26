@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31 | Game</title>
+
+
+    <link rel="stylesheet" href="./Styles/global.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/cards.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/game.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/gameOver.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/help.css" type="text/css" />
+
+    <script defer src="./Scripts/Game.js"></script>
+    <script defer src="./Scripts/Deck.js"></script>
+    <script defer src="./Scripts/Card.js"></script>
+    <script defer src="./Scripts/TurnCycle.js"></script>
+    <script defer src="./Scripts/CardClickListener.js"></script>
+    <script defer src="./Scripts/init.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');
+    </style> 
+</head>
+<body>
+    <div class="game-container">
+        <h1>31</h1>
+
+        <div class="user">
+            <div class="level">
+                <p class="level-title">Level</p>
+                <p class="level-up">Level Up</p>
+                <p class="level-value">0</p>
+            </div>
+            <div class="points">
+                <p class="points-title">Points</p>
+                <p class="points-up"></p>
+                <p class="points-value"></p>
+            </div>
+        </div>
+
+        <div class="opponent-hand hand">
+            <p class="opponent-score">Score(s): </p>
+        </div>
+
+        <div class="deck hand"></div>
+
+        <div class="game-over">
+            <h1 class="game-over-title">Victory</h1>
+            <h2 class="game-over-subtitle"> The Computer cowers in the shame of it's defeat.</h2>
+            <div class="game-over-buttons">
+                <button class="retry">Retry</button>
+                <button class="give-up">Home</button>
+            </div>
+        </div>
+
+        <div class="help">
+            <button class="help-exit-button">Back to Game</button>
+            <h1>Help</h1>
+            <section class="help-section">
+                <div class="help-card-outer card-outer" style="background-color: rgb(82, 82, 82);">
+                    <div class="help-card-inner card-inner" style="background-color: rgb(161, 161, 173);">
+                        <p class="help-card-symbol card-symbol">52</p>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Objective</h2>
+                    <hr />
+                    <p>
+                        The objective of the game is to get a score of 31 with the same suit before your opponent (The Computer). 
+                        <strong style="color: rgb(216, 108, 108)">Remember, it is posible to get 31 with 3 cards as long as the 4th is a different suit.</strong>
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="help-card-outer card-outer" style="background-color: rgb(181, 80, 80);">
+                    <div class="help-card-inner card-inner" style="background-color: rgb(181, 80, 80);">
+                        <p class="help-card-symbol card-symbol">0</p>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>No Cards Left</h2>
+                    <hr />
+                    <p>
+                        In the case that the deck is depleated then both you and your opponent's heighest scores are calculated and whichever player is closest to 31 but not over is decleared the winner.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="help-card-outer card-outer" style="background-color: rgb(182, 148, 62)">
+                    <div class="help-card-inner card-inner" style="background-color: rgb(182, 148, 62)">
+                        <p class="help-card-symbol card-symbol">Tie</p>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Tie</h2>
+                    <hr />
+                    <p>
+                        There is two senarios in which a tie is decleared. Firstly if both players start with 31, and secondly if the deck runs out and both players scores are the same.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="help-card-outer card-outer" style="background-color: rgb(62, 109, 182)">
+                    <div class="help-card-inner card-inner" style="background-color: rgb(62, 109, 182)">
+                        <p class="help-card-symbol card-symbol">1</p>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Your Turn Stage 1</h2>
+                    <hr />
+                    <p>
+                        You start your turn by drawing (clicking) either a random card from the deck (the face down pile) or the top card of the discard pile (the face up pile).
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="help-card-outer card-outer" style="background-color: rgb(182, 92, 62)">
+                    <div class="help-card-inner card-inner" style="background-color: rgb(182, 92, 62)">
+                        <p class="help-card-symbol card-symbol">2</p>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Your Turn Stage 2</h2>
+                    <hr />
+                    <p>
+                        You end your turn by discarding (clicking) a card in your hand (the cards at the bottom of the screen) to return it to the discard pile. 
+                        When you finish your turn your opponent will have it's turn.
+                        <strong style="color: rgb(216, 108, 108)">At the end of your turn you will always have 4 cards. </strong>
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="left">
+                    <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                        <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                            <p class="help-card-symbol card-symbol">10</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                        <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                            <p class="help-card-symbol card-symbol">10</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                        <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                            <p class="help-card-symbol card-symbol">10</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                        <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                            <p class="help-card-symbol card-symbol">10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Suits</h2>
+                    <hr />
+                    <p>
+                        The suit names are Blue, Pink, Green and Yellow. 
+                        The number cards are worth their number value and the letter cards are all worth 10 with the exception of A.
+                        A is worth either 1 or 11 depending on which score is better.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="left">
+                    <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                        <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                            <p class="help-card-symbol card-symbol">1</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                        <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                            <p class="help-card-symbol card-symbol">2</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                        <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                            <p class="help-card-symbol card-symbol">3</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                        <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                            <p class="help-card-symbol card-symbol">4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Number Card Values</h2>
+                    <hr />
+                    <p>
+                        The number cards (2 - 10) are worth their number value and the letter cards are all worth 10 with the exception of A.
+                        A is worth either 1 or 11 depending on which score is better.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="left">
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                        <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                            <p class="help-card-symbol card-symbol">K</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                        <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                            <p class="help-card-symbol card-symbol">Q</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                        <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                            <p class="help-card-symbol card-symbol">J</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                        <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                            <p class="help-card-symbol card-symbol">A</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Face Card Values</h2>
+                    <hr />
+                    <p>
+                        Face cards or "Letter Cards" (A, J, Q and K) are all worth 10 with the exception of A.
+                        A is worth either 1 or 11 depending on which score is better.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="left">
+                    <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                        <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                            <p class="help-card-symbol card-symbol">K</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                        <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                            <p class="help-card-symbol card-symbol">Q</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                        <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                            <p class="help-card-symbol card-symbol">J</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                        <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                            <p class="help-card-symbol card-symbol">A</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Calculating Your Score</h2>
+                    <hr />
+                    <p>
+                       To calculate your score you must first decide which suit you want to use, you will probbaly want to use the suit you have the most of.
+                       Then for each card of that suit add the value of the card.
+                       If you are unsure of the value of the card refer to this help menu.
+                    </p>
+                </div>
+            </section>
+            <section class="help-section">
+                <div class="left">
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                        <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                            <p class="help-card-symbol card-symbol">K</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                        <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                            <p class="help-card-symbol card-symbol">Q</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                        <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                            <p class="help-card-symbol card-symbol">J</p>
+                        </div>
+                    </div>
+                    <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                        <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                            <p class="help-card-symbol card-symbol">A</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-section-content right">
+                    <h2>Strategy</h2>
+                    <hr />
+                    <p>
+                       Now you can play, how can you win? 
+                       My favorite strategy is to chose the suit that you have the most cards of and only collect cards of that suit. 
+                       When you are drawing if a card of your suit is on the top of the discard pile you can use some addition to figure out what card is best to replace it with to get 31. 
+                       Don't forget that you can pick up and discard the same card if it doesn't help you reach 31. 
+                       <strong style="color: rgb(216, 108, 108)">Don't be afraid to go above 31</strong>, it is only dangerous if the deck has almost run out of cards.
+                    </p>
+                </div>
+            </section>
+        </div>
+        
+        <div class="player-hand hand">
+            <p class="player-score">Score(s): </p>
+        </div>
+
+
+        <div class="buttons">
+            <button class="help-button">Help</button>
+            <button class="restart-button"><img src="./images/restart.svg" alt="restart"></button>
+            <button class="exit-button">Exit</button>
+        </div>
+    </div>
+</body>
+</html>

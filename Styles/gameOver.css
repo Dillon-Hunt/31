@@ -1,0 +1,76 @@
+.game-over {
+    position: absolute;
+    width: calc(300px + 1vh);
+    height: calc(230px + 1vh);
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+
+    border-radius: 5px;
+
+    display: none;
+
+    transform: translate(-50%, -50%)
+}
+
+.game-over.victory { 
+    background: #42A539;
+    display: block;
+}
+
+.game-over.bust { 
+    background: #BD2F2F;
+    display: block;
+}
+
+.game-over.tie { 
+    background: #B6943E;
+    display: block;
+}
+
+.game-over > h1 { 
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.game-over > h2 { 
+    padding: 0 25px 10px 25px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.game-over-buttons > button { 
+    position: absolute;
+    width: 131px;
+    height: 59px;
+    border: none;
+
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.game-over-buttons > button.retry {
+    left: 5px;
+    bottom: 5px
+}
+
+.game-over-buttons > button.give-up {
+    right: 5px;
+    bottom: 5px
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31 | Home</title>
+
+
+    <link rel="stylesheet" href="./Styles/global.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/cards.css" type="text/css" />
+    
+    <script defer src="./Scripts/home.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');
+    </style> 
+</head>
+<body>
+    <section class="home-content">
+        <h1>31</h1>
+
+        <div class="profile">
+            <h2 class="player-stats">Player Stats</h2>
+            <h3 class="level-text">Level 0</h3>
+            <div class="progress-bar-background"><div class="progress-bar-foreground level-progress"></div></div>
+            <h4 class="level-subtext"></h4>
+
+
+            <h3 class="score-text">Score 500</h3>
+            <div class="progress-bar-background"><div class="progress-bar-foreground score-progress"></div></div>
+            <h4 class="score-subtext"></h4>
+
+
+            <h3 class="wl-text">Win : Tie : Loss</h3>
+            <div class="progress-bar-background loss-progress"><div class="progress-bar-foreground win-progress"><div class="progress-bar-foreground-secondary tie-progress"></div></div></div>
+            <h4 class="wl-subtext"></h4>
+
+            <h3>Stats</h3>
+            <p><strong>Games: </strong><span class="games">No Data</span></p>
+            <p><strong>Fastest Win: </strong><span class="fastest-win">No Data</span></p>
+            <p><strong>Average Win: </strong><span class="average-win">No Data</span></p>
+            <p><strong>Fastest Loss: </strong><span class="fastest-loss">No Data</span></p>
+            <p><strong>Average Loss: </strong><span class="average-loss">No Data</span></p>
+
+            <h3>Your Details</h3>
+            <div class="inputs">
+                <input class="name" type="text" placeholder="" />
+                <input class="username" type="text" placeholder="" />
+                <label for="accessability">
+                    <input class="accessability" id="accessability" type="checkbox">Accessability</input>
+                </label>
+                <button class="save-button">Save</button>
+            </div>
+        </div>
+
+        <button class="play-button">Play</button>
+    </section>
+</body>
+</html>

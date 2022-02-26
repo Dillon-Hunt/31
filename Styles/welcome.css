@@ -1,0 +1,131 @@
+h1 {
+    width: 100%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;  
+    margin-bottom: 20px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+section.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+section {
+    background: #202333;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 8px;
+    justify-content: center;
+    width: calc(80vw + 35px);
+}
+
+section > h2 {
+    color: #FFFFFF;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+section > p {
+    color: #FFFFFF;
+    margin: 8px auto 5px auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.sign-up-button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    color: #FFFFFF;
+    background: #3D4260;
+    border-radius: 10px;
+}
+
+/* Sign Up Screen */
+.toggle {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    width: calc(300px + 1vh);
+    height: calc(200px + 1vh);
+    background-color: #FFF;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+
+    border-radius: 5px;
+
+    display: none;
+
+    transform: translate(-50%, -50%)
+}
+
+.toggle > h2 {
+    color: #000;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.toggle > p {
+    color: #000;
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle > .heading {
+    color: #000;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.toggle > .inputs {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.inputs > input {
+    margin: 5px;
+}
+
+.toggle > button {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #077d3a;
+    color: #fff;
+}
+
+.welcome-content.blur {
+    filter: blur(4px);
+}
