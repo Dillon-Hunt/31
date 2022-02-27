@@ -12,6 +12,37 @@ h1 {
     color: #FFFFFF;
 }
 
+.message {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 50px);
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+
+    background: #E96C6C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    opacity: 0;
+}
+
+.message.animated {
+    animation: up-and-out 2s linear;
+}
+
+@keyframes up-and-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(-50%);
+        opacity: 0;
+        display: none;
+    }
+}
+
 .level {
     left: 18px;
     top: 1em;

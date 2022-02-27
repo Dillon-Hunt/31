@@ -18,15 +18,15 @@ class Deck {
             { name: "Ace", symbol: "A", values: [1, 11] }, /* 
             { name: "Evens", symbol: "E", values: [2, 4, 6, 8] }, 
             { name: "Odds", symbol: "O", values: [1, 3, 5, 9] },  */
-            //{ name: "Two", values: [2] }, 
-            /* { name: "Three", values: [3] }, 
+            { name: "Two", values: [2] }, 
+            { name: "Three", values: [3] }, 
             { name: "Four", values: [4] }, 
             { name: "Five", values: [5] }, 
             { name: "Six", values: [6] }, 
             { name: "Seven", values: [7] }, 
             { name: "Eight", values: [8] },
             { name: "Nine", values: [9] },  
-            { name: "Ten", values: [10] },  */
+            { name: "Ten", values: [10] }, 
             { name: "Jack", symbol: "J", values: [10] }, 
             { name: "Queen", symbol: "Q", values: [10] }, 
             { name: "King", symbol: "K", values: [10] },

@@ -6,6 +6,7 @@ class Game {
        this.opponentCards = []
        this.turn = "player"
        this.playerData = JSON.parse(localStorage.getItem("account") || {})
+       this.foods = JSON.parse(localStorage.getItem("foods"))
        this.accessible = this.playerData.accessible || false
     }
 

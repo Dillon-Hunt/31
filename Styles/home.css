@@ -37,6 +37,7 @@ h1 {
 }
 
 .profile {
+    position: relative;
     padding: 10px;
     margin: auto;
     margin-bottom: 8px;

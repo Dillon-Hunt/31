@@ -1,0 +1,96 @@
+.collectables {
+    position: absolute;
+    z-index: 3;
+    padding: 10px;
+    left: 50%;
+    margin-bottom: 8px;
+    height: 100%;
+    justify-content: center;
+    width: calc(80vw + 35px);
+    max-width: 700px;
+    background: #3D4260;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.collectables::-webkit-scrollbar {
+    width: 0 !important 
+}
+
+.rarity {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.rarity-common {  
+    background-color: #4271ff;
+}
+
+.rarity-uncommon {  
+    background-color: #ff424b;
+}
+
+.rarity-rare {
+    background-color: #ff9242;
+}
+
+.rarity-legendary {
+    background-color: #cbb630;
+}
+
+.rarity-epic {
+    background-color: #8742ff;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item {
+    position: relative;
+}
+
+.item > img {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+}
+
+.item > img.none {
+    filter: brightness(0);
+}
+
+.item > p {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.item > .amount {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 12px;
+
+    background: #2B2F44;
+    border-radius: 5px;
+}
