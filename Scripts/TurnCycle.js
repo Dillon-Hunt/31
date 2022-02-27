@@ -503,7 +503,7 @@ class TurnCycle {
                 // initialize the card
                 card.init(document.querySelector(".player-hand"))
 
-                var findFoodDifficulty = (10 - ((this.game.playerData.level || 0)) * 2) > 1 ? 20 - (this.game.playerData.level * 2) : 2 // Set ease of finding food by level
+                var findFoodDifficulty = (20 - ((this.game.playerData.level || 0)) * 2) > 1 ? 20 - (this.game.playerData.level * 2) : 2 // Set ease of finding food by level
 
                 var notFindFood = Math.floor(Math.random() * findFoodDifficulty) // Determine if food is found
 
