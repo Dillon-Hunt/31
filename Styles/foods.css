@@ -1,4 +1,5 @@
 .collectables {
+    display: none;
     position: absolute;
     z-index: 3;
     padding: 10px;
@@ -13,6 +14,34 @@
     transform: translateX(-50%);
     overflow-y: scroll;
     scrollbar-width: none;
+    top: 0;
+}
+
+.collectables > h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #2B2F44;
+    height: 60px;
+    border: 2px solid #3D4260;
+    color: #fff;
+    margin: 0 auto;
+    width: 150px;
+    border-radius: 10px 0 10px 0;
+    display: block;
 }
 
 .collectables::-webkit-scrollbar {

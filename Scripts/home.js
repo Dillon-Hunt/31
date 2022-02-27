@@ -57,6 +57,14 @@ document.querySelector(".play-button").onclick = () => {
     }
 }
 
+document.querySelector(".back-button").onclick = () => {
+    document.querySelector(".collectables").style.display = "none"
+}
+
+document.querySelector(".collectables-button").onclick = () => {
+    document.querySelector(".collectables").style.display = "block"
+}
+
 
 document.querySelector(".save-button").onclick = () => {
     playerData = JSON.parse(localStorage.getItem("account") || {})

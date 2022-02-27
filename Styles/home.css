@@ -12,6 +12,20 @@ h1 {
     color: #FFFFFF;
 }
 
+.collectables-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #2B2F44;
+    height: 60px;
+    border: 2px solid #3D4260;
+    color: #fff;
+    margin: 0 auto;
+    width: 150px;
+    border-radius: 0 10px 0 10px;
+    display: block;
+}
+
 .save-button {
     padding: 10px;
     border: none;
