@@ -1,4 +1,4 @@
-if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).length === 19) { // Update when added more items (Will Reset Account Foods)
+if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).length === 25) { // Update when added more items (Will Reset Account Foods)
     window.foods = JSON.parse(localStorage.getItem("foods"))
 } else {
     window.foods = [
@@ -6,31 +6,31 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             name: "Apple",
             tier: "common",
             amount: 0,
-            weight: 20
+            weight: 30
         },
         {
             name: "Orange",
             tier: "common",
             amount: 0,
-            weight: 20
+            weight: 30
         },
         {
             name: "Banana",
             tier: "common",
             amount: 0,
-            weight: 20
+            weight: 30
         },
         {
             name: "Carrot",
             tier: "common",
             amount: 0,
-            weight: 20
+            weight: 30
         },
         {
             name: "Pineapple",
             tier: "common",
             amount: 0,
-            weight: 20
+            weight: 30
         },
         {
             name: "Lemon",
@@ -63,6 +63,18 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             weight: 15
         },
         {
+            name: "Kiwi Fruit",
+            tier: "uncommon",
+            amount: 0,
+            weight: 15
+        },
+        {
+            name: "Pumpkin",
+            tier: "uncommon",
+            amount: 0,
+            weight: 15
+        },
+        {
             name: "Chili",
             tier: "rare",
             amount: 0,
@@ -87,6 +99,12 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             weight: 10
         },
         {
+            name: "Toast",
+            tier: "rare",
+            amount: 0,
+            weight: 10
+        },
+        {
             name: "Waffle",
             tier: "legendary",
             amount: 0,
@@ -99,6 +117,12 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             weight: 5
         },
         {
+            name: "Taco",
+            tier: "legendary",
+            amount: 0,
+            weight: 5
+        },
+        {
             name: "Cake",
             tier: "epic",
             amount: 0,
@@ -106,6 +130,18 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
         },
         {
             name: "Muffin",
+            tier: "epic",
+            amount: 0,
+            weight: 1
+        },
+        {
+            name: "Pancakes",
+            tier: "epic",
+            amount: 0,
+            weight: 1
+        },
+        {
+            name: "Ice Cream",
             tier: "epic",
             amount: 0,
             weight: 1
