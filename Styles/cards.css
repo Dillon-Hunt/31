@@ -99,8 +99,8 @@
 
 .card-outer {
     position: relative;
-    width: 20vw;
-    height: calc(30vw - 5px);
+    width: calc(calc(20vw + 14px) - 3vh);
+    height: calc(calc(30vw + 20px) - 5vh);
     max-width: 100px;
     max-height: 150px;
 
