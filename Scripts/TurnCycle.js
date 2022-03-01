@@ -161,7 +161,7 @@ class TurnCycle {
             var otherCases = this.getAllScores(values.slice(1))
 
             for (var i = 0; i < otherCases.length; i++) {
-                // For each case add to all other values
+                // For each case add to all other valuesa
                 for (var j = 0; j < values[0].length; j++) {
                     // Push values to scores
                     scores.push(values[0][j] + otherCases[i])

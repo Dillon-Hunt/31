@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31 | Welcome</title>
+
+
+    <link rel="stylesheet" href="./Styles/global.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/tutorial.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/cards.css" type="text/css" />
+    
+    <script defer src="./Scripts/tutorial.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');
+    </style> 
+</head>
+<body>
+    <div class="tutorial-content">
+        <h1>31</h1>
+
+        <h2>How to Play</h2>
+
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">1</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                    <p class="help-card-symbol card-symbol">2</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">3</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>First Turn</h2>
+            <p>
+                On your first turn you will be randomly dealt 4 cards. 
+                You will always go first so you will start your turn by drawing a card (by clicking) from either the discard pile (which is face up) or the deck (which is face down). 
+                After you draw you will have to discard one of your 5 cards in your hand. 
+                When you are discarding think about which card will bring your total to 31, this will be explained below. 
+                Look at the images below which depict what your first turn might look like.
+            </p>
+        </section>
+        
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">6</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">3</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You get dealt 4 cards. Now it's time to draw.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                    <p class="help-card-symbol card-symbol">6</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #646469;">
+                <div class="help-card-inner card-inner" style="background-color: #91919e;">
+                    <p class="help-card-symbol card-symbol">?</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You don't want the Pink 6, because you don't have any other pink cards, remembering that you total is made of only one suit, so you chose to draw a random card from the deck.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">6</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">3</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            Now you will see a random card (Yellow 4) has been added to your hand. 
+            Since you have 2 Yellow cards and 2 Green cards, you will most likely discard the single Blue card because it needs the most cards to reach a total of 31.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">3</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You clicked on the Blue 6 to discard it and now you are back to four cards. 
+            You can see that your Green total is 13 because the Jack (J) is worth 10 and the 3 is worth 3.
+            Your Yellow total is now 12 because you have a 8 and a 4.
+            You now wait for your opponent to take their turn.
+        </p>
+
+        <section>
+            <h2>Second Turn</h2>
+            <p>
+                You opponent has finished it's turn and you have calculated your scores, now it's time for your next turn.
+            </p>
+        </section>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #646469;">
+                <div class="help-card-inner card-inner" style="background-color: #91919e;">
+                    <p class="help-card-symbol card-symbol">?</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You see that your opponent has discarded a Yellow King (K) which is worth 10. 
+            If you pick up this card you yellow total will be brought up to 22 which is closer to 31 than your Green cards which are worth 13. 
+            Since it is grater than your green total you should pick it up and add it to your hand.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">3</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            Since you have 3 Yellow cards adding to 22 and 2 Green cards adding to 13, you will discard a Green card because the total is further from 31 and you will discard the Green 3 because it is worth less.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You clicked the Green 3 to discard it. 
+            Your Yellow total is now 22 and your Green total is 10. 
+            Now you wait for your opponent to move.
+        </p>
+
+        <section>
+            <h2>Third Turn</h2>
+            <p>
+                You opponent has finished it's turn and you have calculated your scores, now it's time for your next turn.
+            </p>
+        </section>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">9</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #646469;">
+                <div class="help-card-inner card-inner" style="background-color: #91919e;">
+                    <p class="help-card-symbol card-symbol">?</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            Your opponent discarded a 9 which is worth 9. 
+            If you draw the Yellow 9 it would your yellow total from 22 to 31. 
+            31 is the aim of the game, so to win you should draw the Yellow 9. 
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">9</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You clicked the Yellow 9 to draw it and it has been added to your hand. 
+            Since your Yellow cards add up to 31 and you need to discard a card before you can win, discard the Green King (K), leaving you with a score of 31.
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455">
+                    <p class="help-card-symbol card-symbol">4</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80703A;">
+                <div class="help-card-inner card-inner" style="background-color: #BAA455;">
+                    <p class="help-card-symbol card-symbol">9</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You clicked the Green King (K) to discard it leaving you with a Yellow total of 31.
+        </p>
+
+        <section>
+            <h2>Game Over</h2>
+            <p>
+                You won the game. 
+                Now that you know how to play the game, click the play button below to play your first game or keep scrolling to see some of the winning card combinations.
+            </p>
+        </section>
+
+        <button class="play">Start Playing</button>
+
+        <section>
+            <h2>Winning Combinations (Tricky)</h2>
+            <p>
+                Below you will see some of the different ways to win, only one suit is shown for each combination but remember you can win with any suit.
+            </p>
+        </section>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                    <p class="help-card-symbol card-symbol">10</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">5</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                    <p class="help-card-symbol card-symbol">A</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #80597C;">
+                <div class="help-card-inner card-inner" style="background-color: #D792D0;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You Pink score is 31 or 21 because you have a Pink 10, worth 10; Pink Ace (A), worth 11 or 1; and a Pink Jack (J) worth 10. 
+            Remember in this example the Blue count doesn't matter because you have already got 31.</br>
+            <br>
+            Pink: 1 + 10 + 10 = 21</br>
+            Pink: 11 + 10 + 10 = <strong>31</strong></br>
+            Blue: 5 = 5
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">A</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">Q</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #595D80;">
+                <div class="help-card-inner card-inner" style="background-color: #8288BA;">
+                    <p class="help-card-symbol card-symbol">K</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You Blue score is 31 or 41 because you have a Blue Ace (A), worth 11 or 1; Blue Jack (J), worth 10, Blue Queen (Q), worth 10; and a Blue King (K), worth 10. </br>
+            <br>
+            Blue: 1 + 10 + 10 + 10 = <strong>31</strong></br>
+            Blue: 11 + 10 + 10 + 10 = 41
+        </p>
+
+        <section class="cards">
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">5</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">8</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+            <div class="help-card-outer card-outer overlap" style="background-color: #598076;">
+                <div class="help-card-inner card-inner" style="background-color: #82BAAD;">
+                    <p class="help-card-symbol card-symbol">J</p>
+                </div>
+            </div>
+        </section>
+        <p class="description">
+            You Blue score is 31 or 41 because you have a Blue Ace (A), worth 11 or 1; Blue Jack (J), worth 10, Blue Queen (Q), worth 10; and a Blue King (K), worth 10. </br>
+            <br>
+            Blue: 1 + 10 + 10 + 10 = <strong>31</strong></br>
+            Blue: 11 + 10 + 10 + 10 = 41
+        </p>
+
+        <section>
+            <h2>Further Reading For People Who Care</h2>
+            <h3>Most Valuable Cards</h3>
+            <p class="left">
+                Here is a list of the most to least valuable cards (given you are playing with one deck). </br>
+            </p>
+
+            <ol>
+                <li>Ace</li>
+                <li>Face Cards + 10</li>
+                You can't win without a face card and/or a 10 however ace is superior.</br>
+                </br>
+                <li>8 (21 Combinations)</li>
+                <li>7 (20 Combinations)</li>
+                <li>9 (18 Combinations)</li>
+                <li>4, 6 (15 Combinations)</li>
+                <li>3, 5 (12 Combinations)</li>
+                <li>2 (10 Combinations)</li>
+            </ol>
+
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="graph-root" style="font-family:Roboto;font-size:12px;width: 80vw;" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+                <rect fill="#202333" class="graph-background" x="0" y="0" width="400" height="400" rx="0" ry="0"/>
+                <rect fill="none" class="graph-plot-background" x="63" y="47" width="577" height="317"/>
+                <g class="graph-pane-group" data-z-index="0"/>
+                    <g class="graph-grid graph-xaxis-grid" data-z-index="1">
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 106.5 47 L 106.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 151.5 47 L 151.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 195.5 47 L 195.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 240.5 47 L 240.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 284.5 47 L 284.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 328.5 47 L 328.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 373.5 47 L 373.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 417.5 47 L 417.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 461.5 47 L 461.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 506.5 47 L 506.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 550.5 47 L 550.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 595.5 47 L 595.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 639.5 47 L 639.5 364" opacity="1"/>
+                        <path fill="none" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 62.5 47 L 62.5 364" opacity="1"/>
+                    </g>
+                    <g class="graph-grid graph-yaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 364.5 L 400 364.5" opacity="1"/>
+                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 301.5 L 400 301.5" opacity="1"/>
+                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 237.5 L 400 237.5" opacity="1"/>
+                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 174.5 L 400 174.5" opacity="1"/>
+                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 110.5 L 400 110.5" opacity="1"/>
+                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="graph-grid-line" d="M 63 46.5 L 400 46.5" opacity="1"/>
+                    </g>
+                    <rect fill="none" class="graph-plot-border" data-z-index="1" x="63" y="47" width="577" height="317"/>
+                    <g class="graph-axis graph-xaxis" data-z-index="2">
+                        <path fill="none" class="graph-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 63 364.5 L 400 364.5"/>
+                    </g>
+                    <g class="graph-axis graph-yaxis" data-z-index="2">
+                        <text x="24.633333206176758" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 24.633333206176758 205.5)" class="graph-axis-title" style="color:#fff;fill:#fff;" y="205.5">No. Combinations</text><path fill="none" class="graph-axis-line" data-z-index="7" d="M 63 47 L 63 364"/>
+                    </g>
+                    <g class="graph-series-group" data-z-index="3">
+                        <g class="graph-series graph-series-0 graph-column-series" data-z-index="0.1" opacity="1" transform="translate(63,47) scale(1 1)" clip-path="url(#graph-5t6lbd0-617-)">
+                        <rect x="10" y="26" rx="2px" ry="2px" width="16" height="292" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="35" y="191" rx="2px" ry="2px" width="16" height="127" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="60" y="166" rx="2px" ry="2px" width="16" height="152" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="85" y="128" rx="2px" ry="2px" width="16" height="190" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="110" y="166" rx="2px" ry="2px" width="16" height="152" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="135" y="128" rx="2px" ry="2px" width="16" height="190" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="160" y="64" rx="2px" ry="2px" width="16" height="254" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="185" y="52" rx="2px" ry="2px" width="16" height="266" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="210" y="90" rx="2px" ry="2px" width="16" height="228" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="235" y="52" rx="2px" ry="2px" width="16" height="266" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="260" y="52" rx="2px" ry="2px" width="16" height="266" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="285" y="52" rx="2px" ry="2px" width="16" height="266" fill="#6f58e9" opacity="1" class="graph-point"/>
+                        <rect x="310" y="52" rx="2px" ry="2px" width="16" height="266" fill="#6f58e9" opacity="1" class="graph-point"/>
+                    </g>
+                    <g class="graph-markers graph-series-0 graph-column-series" data-z-index="0.1" opacity="1" transform="translate(63,47) scale(1 1)" clip-path="none"/></g>
+                    
+                    <text x="240" text-anchor="middle" class="graph-title" data-z-index="4" style="color:#fff;font-size:18px;fill:#fff;" y="24">Card Combinations</text>
+                    <text x="325" text-anchor="middle" class="graph-subtitle" data-z-index="4" style="color:#fff;fill:#fff;" y="46"/>
+                    <text x="10" text-anchor="start" class="graph-caption" data-z-index="4" style="color:#fff;fill:#fff;" y="397"/>
+                    
+                    <g class="graph-data-labels graph-series-0 graph-column-series" data-z-index="6" opacity="1" transform="translate(63,47) scale(1 1)">
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(7,3)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">23</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(32,168)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">10</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(57,143)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">12</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(82,105)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">15</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(107,143)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">12</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(132,105)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">15</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(157,41)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">20</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(182,29)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">21</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(207,67)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">18</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(232,29)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">21</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(257,29)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">21</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(282,29)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">21</text></g>
+                        <g class="graph-label graph-data-label graph-data-label-color-undefined" data-z-index="1" style="cursor:pointer;" transform="translate(307,29)">
+                            <text x="5" data-z-index="1" y="16" style="color:#fff;font-size:11px;font-weight:bold;fill:#fff;">21</text></g></g>
+                        <g class="graph-legend" data-z-index="7">
+                            <rect fill="none" class="graph-legend-box" rx="0" ry="0" x="0" y="0" width="8" height="8" visibility="hidden"/>
+                            <g data-z-index="1"><g/>
+                        </g>
+                    </g>
+                    <g class="graph-axis-labels graph-xaxis-labels" data-z-index="7">
+                        <text x="80" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">A</text>
+                        <text x="105" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2</text>
+                        <text x="130" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">3</text>
+                        <text x="155" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">4</text>
+                        <text x="180" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">5</text>
+                        <text x="205" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">6</text>
+                        <text x="230" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">7</text>
+                        <text x="255" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">8</text>
+                        <text x="280" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">9</text>
+                        <text x="305" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">10</text>
+                        <text x="330" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">J</text>
+                        <text x="355" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Q</text>
+                        <text x="380" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">K</text>
+                    </g>
+                    <g class="graph-axis-labels graph-yaxis-labels" data-z-index="7">
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="368" opacity="1">0</text>
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">5</text>
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="241" opacity="1">10</text>
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="178" opacity="1">15</text>
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="115" opacity="1">20</text>
+                        <text x="48" style="color:#fff;cursor:default;font-size:11px;fill:#fff;" text-anchor="end" transform="translate(0,0)" y="51" opacity="1">25</text>
+                    </g>
+                </svg>
+
+            <p class="left">
+                Here is a list of the possible combinations.
+            </p>
+            
+            <ul>
+                <li>A, 10, J</li>
+                <li>A, 10, Q</li>
+                <li>A, 10, K</li>
+                <li>A, J, Q</li>
+                <li>A, J, K</li>
+                <li>A, Q, K</li>
+                <li>A, 10, 8, 2</li>
+                <li>A, 10, 7, 3</li>
+                <li>A, 10, 6, 4</li>
+                <li>A, J, 8, 2</li>
+                <li>A, J, 7, 3</li>
+                <li>A, J, 6, 4</li>
+                <li>A, Q, 8, 2</li>
+                <li>A, Q, 7, 3</li>
+                <li>A, Q, 6, 4</li>
+                <li>A, K, 8, 2</li>
+                <li>A, K, 7, 3</li>
+                <li>A, K, 6, 4</li>
+                <li>A, 9, 8, 3</li>
+                <li>A, 9, 7, 4</li>
+                <li>A, 9, 6, 5</li>
+                <li>A, 8, 9, 3</li>
+                <li>A, 8, 7, 5</li>
+                <li>10, J, 9, 2</li>
+                <li>10, J, 8, 3</li>
+                <li>10, J, 7, 4</li>
+                <li>10, J, 6, 5</li>
+                <li>10, Q, 9, 2</li>
+                <li>10, Q, 8, 3</li>
+                <li>10, Q, 7, 4</li>
+                <li>10, Q, 6, 5</li>
+                <li>10, K, 9, 2</li>
+                <li>10, K, 8, 3</li>
+                <li>10, K, 7, 4</li>
+                <li>10, K, 6, 5</li>
+                <li>J, Q, 9, 2</li>
+                <li>J, Q, 8, 3</li>
+                <li>J, Q, 7, 4</li>
+                <li>J, Q, 6, 5</li>
+                <li>J, K, 9, 2</li>
+                <li>J, K, 8, 3</li>
+                <li>J, K, 7, 4</li>
+                <li>J, K, 6, 5</li>
+                <li>K, Q, 9, 2</li>
+                <li>K, Q, 8, 3</li>
+                <li>K, Q, 7, 4</li>
+                <li>K, Q, 6, 5</li>
+                <li>10, 9, 8, 4</li>
+                <li>10, 9, 7, 5</li>
+                <li>10, 8, 7, 6</li>
+                <li>J, 9, 8, 4</li>
+                <li>J, 9, 7, 5</li>
+                <li>J, 8, 7, 6</li>
+                <li>Q, 9, 8, 4</li>
+                <li>Q, 9, 7, 5</li>
+                <li>Q, 8, 7, 6</li>
+                <li>K, 9, 8, 4</li>
+                <li>K, 9, 7, 5</li>
+                <li>K, 8, 7, 6</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

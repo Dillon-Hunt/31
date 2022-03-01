@@ -1,0 +1,135 @@
+h1 {
+    width: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;  
+    margin-bottom: 20px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+h2 {
+    width: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;  
+    margin-bottom: 22px;
+    text-align: center;
+
+    color: #dedede;
+}
+
+
+h3 {
+    width: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 42px;  
+    margin-bottom: 20px;
+    text-align: left;
+
+    color: #FFFFFF;
+}
+
+ol {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    color: #c0c0c0;
+    margin-left: 01em;
+}
+
+li {
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    margin-left: 1em;
+}
+
+.description {
+    background: #3D4260;
+    width: 80%;
+    margin-left: 10vw;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: -8px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    color: #FFFFFF;
+}
+
+section.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+section {
+    background: #202333;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 8px;
+    justify-content: center;
+    width: calc(80vw + 35px);
+}
+
+section > h2 {
+    color: #FFFFFF;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+section > h3 {
+    color: #dedede;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 10px;
+}
+
+section > p {
+    color: #FFFFFF;
+    margin: 8px auto 5px auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.play {
+    width: 100px;
+    height: 50px;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    color: #FFFFFF;
+    background: #3D4260;
+    border-radius: 10px;
+}
+
+p.left {
+    text-align: left !important;
+}
