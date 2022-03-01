@@ -5,3 +5,16 @@
 body {
     background-color: #2B2F44;
 }
+
+.warning {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
