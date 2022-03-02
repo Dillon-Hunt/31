@@ -2,7 +2,7 @@ function updateTheme() {
     if (localStorage.getItem("theme") === null) {
         localStorage.setItem("theme", JSON.stringify({
             color1: "#2B2F44",
-            color2: "#424d81",
+            color2: "#3D4260",
             color3: "#3D4260",
             color4: "#8D55D6",
             color5: "#379CB3",

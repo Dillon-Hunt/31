@@ -403,15 +403,39 @@ class TurnCycle {
                 document.querySelectorAll(".open").forEach(element => {
                     element.style.display = "block"
                 })
+                document.querySelector(".reward").classList.add("received")
+                if (randomFood.tier === "common") {
+                    document.querySelector(".reward").style.backgroundColor = "#4271ff"
+                } else if (randomFood.tier === "uncommon") {
+                    document.querySelector(".reward").style.backgroundColor = "#ff424b"
+                } else if (randomFood.tier === "rare") {
+                    document.querySelector(".reward").style.backgroundColor = "#ff9242"
+                } else if (randomFood.tier === "legendary") {
+                    document.querySelector(".reward").style.backgroundColor = "#dec209"
+                } else if (randomFood.tier === "epic") {
+                    document.querySelector(".reward").style.backgroundColor = JSON.parse(localStorage.getItem("theme")).color4
+                }
                 document.querySelector(".fruit").style.animation = "rise 1s ease-in-out"
                 document.querySelector(".fruit").src = `./images/${randomFood.name.toLowerCase()}.png`
                 setTimeout(() => {
                     document.querySelector(".fruit").style.animation = ""
-                    document.querySelector(".fruit").style.top = "100px"
+                    document.querySelector(".fruit").style.top = "90px"
+                    document.querySelector(".reward").classList.remove("received")
+                    document.querySelectorAll(".chest").forEach(chest => {
+                        chest.style.transition = "0.2s"
+                        chest.style.opacity = "0"
+                    })
+                    setTimeout(() => {
+                        document.querySelector(".found-message-tier").textContent = randomFood.tier
+                        document.querySelector(".found-message-tier").style.display = "block"
+                        document.querySelector(".found-message").textContent = this.game.playerData.username + " found a " + randomFood.name + "."
+                        document.querySelector(".found-message").style.display = "block"
+                    }, 200)
                 }, 1000)
             }
 
             document.querySelector(".next-button").onclick = () => {
+                document.querySelector(".reward").classList.remove("received")
                 document.querySelector(".reward").style.display = "none"
             }
 

@@ -6,73 +6,73 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             name: "Apple",
             tier: "common",
             amount: 0,
-            weight: 30
+            weight: 40
         },
         {
             name: "Orange",
             tier: "common",
             amount: 0,
-            weight: 30
+            weight: 40
         },
         {
             name: "Banana",
             tier: "common",
             amount: 0,
-            weight: 30
+            weight: 40
         },
         {
             name: "Carrot",
             tier: "common",
             amount: 0,
-            weight: 30
+            weight: 40
         },
         {
             name: "Pineapple",
             tier: "common",
             amount: 0,
-            weight: 30
+            weight: 40
+        },
+        {
+            name: "Strawberry",
+            tier: "common",
+            amount: 0,
+            weight: 40
         },
         {
             name: "Lemon",
             tier: "uncommon",
             amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Tomato",
             tier: "uncommon",
             amount: 0,
-            weight: 15
-        },
-        {
-            name: "Strawberry",
-            tier: "uncommon",
-            amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Pear",
             tier: "uncommon",
             amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Watermelon",
             tier: "uncommon",
             amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Kiwi Fruit",
             tier: "uncommon",
             amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Pumpkin",
             tier: "uncommon",
             amount: 0,
-            weight: 15
+            weight: 20
         },
         {
             name: "Chili",
