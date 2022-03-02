@@ -25,7 +25,7 @@
 }
 
 .help > h1 {
-    color: #FFF;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     margin: 25px;
@@ -40,9 +40,9 @@
 }
 
 hr { 
-    color: #FFF;
+    color: inherit;
     height: 1.5px;
-    background-color: #FFF;
+    background-color: inherit;
     border: none;
     margin-top: 0;
 }
@@ -75,14 +75,14 @@ hr {
 }
 
 .help-section-content > h2 { 
-    color: #FFF;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     margin: 0;
 }
 
 .help-section-content > p { 
-    color: #FFF;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 12px;

@@ -16,24 +16,26 @@
     
     <script defer src="./Scripts/home.js"></script>
     <script defer src="./Scripts/foods.js"></script>
+    <script defer src="./Scripts/themeSelect.js"></script>
+    <script defer src="./Scripts/theme.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');
     </style> 
 </head>
-<body>
+<body class="color1">
     <div class="warning">
         <h1>Please Rotate Your Device.</h1>
     </div>
 
-    <section class="home-content">
+    <section class="home-content color1">
         <h1>31</h1>
 
-        <div class="profile">
+        <div class="profile color2">
 
-            <div class="collectables">
+            <div class="collectables color2">
                 <h2>Your Collectables</h2>
-                <button class="back-button">Back to Player Stats</button>
+                <button class="back-button color1">Back to Player Stats</button>
                 <h2 class="rarity rarity-common">Common</h2>
                 <div class="items common"></div>
 
@@ -46,19 +48,19 @@
                 <h2 class="rarity rarity-legendary">Legendary</h2>
                 <div class="items legendary"></div>
 
-                <h2 class="rarity rarity-epic">Epic</h2>
+                <h2 class="rarity rarity-epic color4">Epic</h2>
                 <div class="items epic"></div>
             </div>
 
             <h2 class="player-stats">Player Stats</h2>
-            <button class="collectables-button">View Collectables</button>
+            <button class="collectables-button color1">View Collectables</button>
             <h3 class="level-text">Level 0</h3>
-            <div class="progress-bar-background"><div class="progress-bar-foreground level-progress"></div></div>
+            <div class="progress-bar-background color1"><div class="progress-bar-foreground level-progress color4"></div></div>
             <h4 class="level-subtext"></h4>
 
 
             <h3 class="score-text">Score 500</h3>
-            <div class="progress-bar-background"><div class="progress-bar-foreground score-progress"></div></div>
+            <div class="progress-bar-background color1"><div class="progress-bar-foreground score-progress color5"></div></div>
             <h4 class="score-subtext"></h4>
 
 
@@ -73,6 +75,22 @@
             <p><strong>Fastest Loss: </strong><span class="fastest-loss">No Data</span></p>
             <p><strong>Average Loss: </strong><span class="average-loss">No Data</span></p>
 
+            <h3>Themes</h3>
+            <div class="themes">
+                <div class="theme blue selected">
+                    <div class="div"></div>
+                </div>
+                <div class="theme light-blue selected">
+                    <div class="div"></div>
+                </div>
+                <div class="theme red">
+                    <div class="div"></div>
+                </div>
+                <div class="theme light-red">
+                    <div class="div"></div>
+                </div>
+            </div>
+
             <h3>Your Details</h3>
             <div class="inputs">
                 <input class="name" type="text" placeholder="" />
@@ -80,11 +98,11 @@
                 <label for="accessability">
                     <input class="accessability" id="accessability" type="checkbox">Accessability</input>
                 </label>
-                <button class="save-button">Save</button>
+                <button class="save-button color1">Save</button>
             </div>
         </div>
 
-        <button class="play-button">Play</button>
+        <button class="play-button color2">Play</button>
     </section>
 </body>
 </html>

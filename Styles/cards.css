@@ -36,7 +36,7 @@
 .player-score { /* Will Remove In Final Game */
     opacity: 0.2;
     display: none;
-    color: #fff;
+    color: inherit;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     bottom: calc(50vh - 100px);
@@ -46,7 +46,7 @@
 
 
 .player-wins {
-    color: #fff;
+    color: inherit;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
@@ -73,7 +73,7 @@
 .opponent-score {
     opacity: 0.2;
     display: none;
-    color: #fff;
+    color: inherit;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     left: 10px;
@@ -82,7 +82,7 @@
 }
 
 .opponent-wins {
-    color: #fff;
+    color: inherit;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
@@ -155,7 +155,7 @@
     align-items: center;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 
     transform: translate(-50%, -50%);
 }

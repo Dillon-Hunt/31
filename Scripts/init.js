@@ -1,4 +1,5 @@
 (function () {
+    updateTheme()
     if (localStorage.getItem("account")) {
         const game = new Game({
             element: document.querySelector(".game-container")

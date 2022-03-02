@@ -9,19 +9,19 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .collectables-button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3px;
+    right: 3px;
     background: #2B2F44;
     height: 60px;
-    border: 2px solid #3D4260;
-    color: #fff;
+    border: none;
+    color: inherit;
     margin: 0 auto;
-    width: 150px;
+    width: 100px;
     border-radius: 0 10px 0 10px;
     display: block;
 }
@@ -33,7 +33,7 @@ h1 {
     width: 100%;
     margin: 0;
     margin-top: 10px;
-    color: #FFFFFF;
+    color: inherit;
     background: #2B2F44;
     border-radius: 5px;
     width: calc(100% + 20px);
@@ -45,7 +45,7 @@ h1 {
     border: none;
     display: block;
     margin: 20px auto;
-    color: #FFFFFF;
+    color: inherit;
     background: #3D4260;
     border-radius: 10px;
 }
@@ -70,8 +70,8 @@ h1 {
     font-size: 24px;
     line-height: 28px;
     align-items: center;
-    text-align: center;
-    color: #FFFFFF;
+    text-align: left;
+    color: inherit;
 }
 
 .profile > h3 {
@@ -83,7 +83,7 @@ h1 {
     line-height: 28px;
     align-items: left;
     text-align: left;
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .profile > h4 {
@@ -95,7 +95,7 @@ h1 {
     line-height: 28px;
     align-items: left;
     text-align: left;
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .profile > p {
@@ -107,7 +107,7 @@ h1 {
     line-height: 28px;
     align-items: left;
     text-align: left;
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .inputs {
@@ -128,7 +128,7 @@ h1 {
 }
 
 label {
-    color: #FFFFFF;
+    color: inherit;
     font-family: 'Roboto';
 }
 
@@ -177,4 +177,58 @@ label {
     border-radius: 0px;
     left: 100%;
     background: #CFB041;
+}
+
+.themes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.theme {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.theme > div {
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.blue {
+    background-color: #2B2F44;
+}
+
+.blue > div {
+    background-color: #3D4260;
+}
+
+.light-blue {
+    background-color: #6D80E3;
+}
+
+.light-blue > div {
+    background-color: #5C6DC5;
+}
+
+.red {
+    background-color: #641919;
+}
+
+.red > div {
+    background-color: #8C3131;
+}
+
+.light-red {
+    background-color: #FF9393;
+}
+
+.light-red > div {
+    background-color: #FF7D7D;
 }

@@ -39,7 +39,7 @@
     line-height: 43px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .game-over > h2 { 
@@ -52,7 +52,7 @@
     line-height: 30px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .game-over-buttons > button { 

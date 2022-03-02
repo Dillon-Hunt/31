@@ -9,7 +9,7 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 }
 
 section.cards {
@@ -29,7 +29,7 @@ section {
 }
 
 section > h2 {
-    color: #FFFFFF;
+    color: inherit;
     margin: 0 auto;
     font-family: 'Roboto';
     font-style: normal;
@@ -39,7 +39,7 @@ section > h2 {
 }
 
 section > p {
-    color: #FFFFFF;
+    color: inherit;
     margin: 8px auto 5px auto;
     font-family: 'Roboto';
     font-style: normal;
@@ -54,7 +54,7 @@ section > p {
     border: none;
     display: block;
     margin: 20px auto;
-    color: #FFFFFF;
+    color: inherit;
     background: #3D4260;
     border-radius: 10px;
 }
@@ -65,7 +65,7 @@ section > p {
     position: absolute;
     width: calc(300px + 1vh);
     height: calc(200px + 1vh);
-    background-color: #FFF;
+    background-color: inherit;
     left: 50%;
     top: 50%;
     z-index: 2;
@@ -123,9 +123,28 @@ section > p {
     padding: 10px;
     border-radius: 5px;
     background-color: #077d3a;
-    color: #fff;
+    color: inherit;
 }
 
 .welcome-content.blur {
     filter: blur(4px);
+}
+
+.game-image {
+    width: 26.666vw;
+    border-radius: 10px;
+}
+
+.image > p{
+    width: 100%;
+    color: inherit;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+.images {
+    gap: 8px !important
 }

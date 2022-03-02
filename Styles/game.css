@@ -9,7 +9,7 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: inherit;
 }
 
 .message {
@@ -18,7 +18,7 @@ h1 {
     top: calc(50% - 50px);
     z-index: 2;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
 
     background: #E96C6C;
@@ -59,7 +59,7 @@ h1 {
 .level > .level-title {
     position: absolute;
     top: -10px;
-    color: #eaeaea;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
     left: 50%;
@@ -71,7 +71,7 @@ h1 {
     display: none;
     right: -10px;
     top: -24px;
-    color: #fff;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     padding: 5px 10px;
     text-align: center;
@@ -86,7 +86,7 @@ h1 {
 .level > .level-value {
     position: absolute;
     bottom: -10px;
-    color: #FFFFFF;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     left: 50%;
@@ -109,7 +109,7 @@ h1 {
 .points > .points-title {
     position: absolute;
     top: -10px;
-    color: #eaeaea;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
     left: 50%;
@@ -121,7 +121,7 @@ h1 {
     display: none;
     right: -10px;
     top: -24px;
-    color: #fff;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     padding: 5px 10px;
     text-align: center;
@@ -136,7 +136,7 @@ h1 {
 .points > .points-value {
     position: absolute;
     bottom: -10px;
-    color: #FFFFFF;
+    color: inherit;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     left: 50%;
@@ -159,7 +159,7 @@ h1 {
     background: #3D4260;
     height: 50px;   
     border: none; 
-    color: #fff;   
+    color: inherit;   
 }
 
 
@@ -171,7 +171,6 @@ h1 {
 .restart-button {
     width: 50px;
     border-radius: 1000px;
-    transition: 1s;
     transform: rotate(0)
 }
 
@@ -181,6 +180,7 @@ h1 {
 }
 
 .restart-button:hover {
+    transition: 1s;
     transition: 5s;
     transform: rotate(359deg)
 }
