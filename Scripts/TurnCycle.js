@@ -161,7 +161,7 @@ class TurnCycle {
             var otherCases = this.getAllScores(values.slice(1))
 
             for (var i = 0; i < otherCases.length; i++) {
-                // For each case add to all other valuesa
+                // For each case add to all other values
                 for (var j = 0; j < values[0].length; j++) {
                     // Push values to scores
                     scores.push(values[0][j] + otherCases[i])
@@ -374,6 +374,47 @@ class TurnCycle {
             // Case: there is a winner and it is the player
             this.points += 100
 
+            document.querySelector(".reward").style.display = "block"
+
+            var foodsArray = [];
+
+            for(var i = 0; i < this.game.foods.length; i++) {
+                // Run through all foods
+
+                for(var x = 0; x < this.game.foods[i].weight; x++) {
+                    // Run through all food weights
+
+                    // Add food to foodsArray
+                    foodsArray.push(this.game.foods[i]);
+                }
+            }
+
+            // Pick a weighted random food
+            var index = Math.floor(Math.random() * foodsArray.length);
+            var randomFood = foodsArray[index];
+
+            this.game.foods[this.game.foods.indexOf(randomFood)].amount++
+
+            localStorage.setItem("foods", JSON.stringify(this.game.foods))
+            
+            document.querySelector(".open-button").onclick = () => {
+                document.querySelector(".open-button").style.display = "none"
+                document.querySelector(".closed").style.display = "none"
+                document.querySelectorAll(".open").forEach(element => {
+                    element.style.display = "block"
+                })
+                document.querySelector(".fruit").style.animation = "rise 1s ease-in-out"
+                document.querySelector(".fruit").src = `./images/${randomFood.name.toLowerCase()}.png`
+                setTimeout(() => {
+                    document.querySelector(".fruit").style.animation = ""
+                    document.querySelector(".fruit").style.top = "100px"
+                }, 1000)
+            }
+
+            document.querySelector(".next-button").onclick = () => {
+                document.querySelector(".reward").style.display = "none"
+            }
+
             // Update DOM
             document.querySelector(".game-over").classList.add("victory")
             document.querySelector(".game-over-title").textContent = this.game.playerData.username + " Wins"
@@ -502,43 +543,6 @@ class TurnCycle {
 
                 // initialize the card
                 card.init(document.querySelector(".player-hand"))
-
-                var findFoodDifficulty = (20 - ((this.game.playerData.level || 0)) * 2) > 1 ? 20 - (this.game.playerData.level * 2) : 2 // Set ease of finding food by level
-
-                var notFindFood = Math.floor(Math.random() * findFoodDifficulty) // Determine if food is found
-
-                if (!notFindFood) {
-                    // Case: Found food
-
-                    var foodsArray = [];
-
-                    for(var i = 0; i < this.game.foods.length; i++) {
-                        // Run through all foods
-
-                        for(var x = 0; x < this.game.foods[i].weight; x++) {
-                            // Run through all food weights
-
-                            // Add food to foodsArray
-                            foodsArray.push(this.game.foods[i]);
-                        }
-                    }
-
-                    // Pick a weighted random food
-                    var index = Math.floor(Math.random() * foodsArray.length);
-                    var randomFood = foodsArray[index];
-
-                    document.querySelector(".message").textContent = this.game.playerData.name + " Found a " + randomFood.name
-                    document.querySelector(".message").classList.add("animated")
-
-                    setTimeout(() => {
-                        document.querySelector(".message").textContent = ""
-                        document.querySelector(".message").classList.remove("animated")
-                    }, 2000)
-
-                    this.game.foods[this.game.foods.indexOf(randomFood)].amount++
-
-                    localStorage.setItem("foods", JSON.stringify(this.game.foods))
-                }
 
                 //Accessability Settings
                 this.game.accessible && (document.querySelector(".deck-card-outer-prev").tabIndex = -1)
