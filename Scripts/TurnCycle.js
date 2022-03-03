@@ -484,10 +484,10 @@ class TurnCycle {
         localStorage.setItem("account", JSON.stringify(this.game.playerData))
 
         // Update points & level
-        this.updatePoints()
+        this.updatePoints(true)
     }
 
-    updatePoints() {
+    updatePoints(gameOver) {
         // Update points & level
         this.points = this.points || (this.game.playerData.points || 0)
 
@@ -506,6 +506,16 @@ class TurnCycle {
 
         if (level > (this.game.playerData.level || 0)) {
             // Case: level up
+
+            if (gameOver) {
+                document.querySelector(".next-button-0").onclick = () => {
+                    document.querySelector(".level-up-section").style.display = "none"
+                }
+    
+                document.querySelector(".level-up-section").style.display = "block"
+                document.querySelector(".level-up-message").textContent = "LEVEL UP"
+                document.querySelector(".level-up-level").textContent = level
+            }
             this.game.playerData.level = level
             document.querySelector(".level-up").style.display = "block"
 
@@ -522,7 +532,7 @@ class TurnCycle {
 
     async turn() {
         // Update points & level
-        this.updatePoints()
+        this.updatePoints(false)
 
         // Check if there is a winner
         this.winner = this.checkForWinner()
