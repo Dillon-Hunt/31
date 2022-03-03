@@ -44,7 +44,7 @@
     left: 50%;
     top: 60px;
     transform: translateX(-50%);
-    width: calc(1084 / 5);
+    width: calc(1084px / 5);
     height: calc(843px / 5);
     image-rendering: pixelated;
 }
