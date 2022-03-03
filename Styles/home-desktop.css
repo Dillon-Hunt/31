@@ -1,0 +1,277 @@
+h1 {
+    width: 100%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;  
+    margin-bottom: 20px;
+    text-align: center;
+
+    color: inherit;
+}
+
+.collectables-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: #2B2F44;
+    height: 60px;
+    border: none;
+    color: inherit;
+    margin: 0 auto;
+    width: 100px;
+    border-radius: 0 5px 0 5px;
+    display: block;
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px);
+    margin-left: 5px;
+    grid-template-rows: calc(66vh - 95px) calc(34vh - 10px);
+    grid-gap: 10px;
+    grid-template-areas: 
+      "welcome  welcome   stats    stats   stats"
+      "theme    details   stats2  stats2  button";
+}
+
+.welcome-section {
+    grid-area: welcome;
+    position: relative;
+}
+
+.stats-section {
+    grid-area: stats;
+    position: relative;
+}
+
+.theme-section {
+    grid-area: theme;
+}
+
+.details-section {
+    grid-area: details;
+}
+
+.further-stats-section {
+    grid-area: stats2;
+}
+
+.play-button-section {
+    grid-area: button;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    font-size: 24px !important;
+    position: relative !important;
+}
+
+.home-section {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Inputs */
+.inputs {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.inputs > input {
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: calc(100% + 20px);
+}
+
+label {
+    color: inherit;
+    font-family: 'Roboto';
+}
+
+.save-button {
+    padding: 10px;
+    border: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    color: inherit;
+    background: #2B2F44;
+    border-radius: 5px;
+    width: calc(100% + 20px);
+}
+
+.play-button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: inherit;
+    background: #3D4260;
+    border-radius: 10px;
+}
+
+/* Progress Bars */
+.progress-bar-background {
+    position: relative;
+    width: calc(100% - 5px);
+    height: 14px;
+    background: #2B2F44;
+    border-radius: 5px;
+}
+
+.progress-bar-foreground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.level-progress {
+    width: 60%;
+    background: #8D55D6;
+}
+
+.score-progress {
+    background: #379CB3;
+}
+
+.win-progress {
+    background: #37B361;
+}
+
+.loss-progress {
+    background: #d65555;
+}
+
+.progress-bar-foreground-secondary {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.tie-progress {
+    border-radius: 0px;
+    left: 100%;
+    background: #CFB041;
+}
+
+/* Text */
+.home-section > h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px auto;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: center;
+    text-align: left;
+    color: inherit;
+}
+
+.home-section > h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px auto;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: left;
+    text-align: left;
+    color: inherit;
+}
+
+.home-section > h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    margin: 2px auto;
+    font-size: 14px;
+    line-height: 28px;
+    align-items: left;
+    text-align: left;
+    color: inherit;
+}
+
+.home-section > p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    margin: 2px auto;
+    font-size: 18px;
+    line-height: 28px;
+    align-items: left;
+    text-align: left;
+    color: inherit;
+}
+
+/* Themes */
+.themes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.theme {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.theme > div {
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.blue {
+    background-color: #2B2F44;
+}
+
+.blue > div {
+    background-color: #3D4260;
+}
+
+.light-blue {
+    background-color: #6D80E3;
+}
+
+.light-blue > div {
+    background-color: #5C6DC5;
+}
+
+.red {
+    background-color: #641919;
+}
+
+.red > div {
+    background-color: #8C3131;
+}
+
+.light-red {
+    background-color: #FF9393;
+}
+
+.light-red > div {
+    background-color: #FF7D7D;
+}

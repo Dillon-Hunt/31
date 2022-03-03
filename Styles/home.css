@@ -50,7 +50,7 @@ h1 {
     border-radius: 10px;
 }
 
-.profile {
+.home-section {
     position: relative;
     padding: 10px;
     margin: auto;
@@ -62,7 +62,7 @@ h1 {
     border-radius: 10px;
 }
 
-.profile > h2 {
+.home-section > h2 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -74,7 +74,7 @@ h1 {
     color: inherit;
 }
 
-.profile > h3 {
+.home-section > h3 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -86,7 +86,7 @@ h1 {
     color: inherit;
 }
 
-.profile > h4 {
+.home-section > h4 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -98,7 +98,7 @@ h1 {
     color: inherit;
 }
 
-.profile > p {
+.home-section > p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;

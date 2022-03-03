@@ -21,5 +21,5 @@ document.querySelector(".submit").onclick = () => {
         level: 0,
         points: 0,
     }))
-    window.location.href = "./index.html"
+    window.location.href = "./tutorial.html"
 }

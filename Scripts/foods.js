@@ -123,19 +123,19 @@ if (localStorage.getItem("foods") && JSON.parse(localStorage.getItem("foods")).l
             weight: 5
         },
         {
-            name: "Cake",
-            tier: "epic",
-            amount: 0,
-            weight: 1
-        },
-        {
             name: "Muffin",
-            tier: "epic",
+            tier: "legendary",
             amount: 0,
-            weight: 1
+            weight: 5
         },
         {
             name: "Pancakes",
+            tier: "legendary",
+            amount: 0,
+            weight: 5
+        },
+        {
+            name: "Cake",
             tier: "epic",
             amount: 0,
             weight: 1

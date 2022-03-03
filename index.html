@@ -8,7 +8,8 @@
 
 
     <link rel="stylesheet" href="./Styles/global.css" type="text/css" />
-    <link rel="stylesheet" href="./Styles/home.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./Styles/home.css" media="only screen and (max-width: 1000px), only screen and (max-height: 650px)">
+    <link rel="stylesheet" type="text/css" href="./Styles/home-desktop.css" media="only screen and (min-width: 1001px) and (min-height: 651px)">
     <link rel="stylesheet" href="./Styles/cards.css" type="text/css" />
     <link rel="stylesheet" href="./Styles/foods.css" type="text/css" />
 
@@ -28,10 +29,22 @@
         <h1>Please Rotate Your Device.</h1>
     </div>
 
-    <section class="home-content color1">
-        <h1>31</h1>
+    <h1>31</h1>
 
-        <div class="profile color2">
+    <section class="home-content color1">
+
+        <div class="home-section color2 welcome-section">
+            <h2>Welcome Back to 31</h2>
+            <p>
+                Click the play button below to jump straight back into a new game, otherwise you can scroll down to view your stats, settings and manage your collectables. <br><br>
+                If you want something to do, try collecting as many fruits as possible, you collect one random fruit for every game you win. 
+                Some of the fruits are very rare, so don't worry if you don't get it. Have fun and enjoy 😀.
+            </p>
+
+            <button class="play-button color1">Play</button>
+        </div>
+
+        <div class="home-section stats-section color2">
 
             <div class="collectables color2">
                 <h2>Your Collectables</h2>
@@ -67,15 +80,19 @@
             <h3 class="wl-text">Win : Tie : Loss</h3>
             <div class="progress-bar-background loss-progress"><div class="progress-bar-foreground win-progress"><div class="progress-bar-foreground-secondary tie-progress"></div></div></div>
             <h4 class="wl-subtext"></h4>
+        </div>
 
-            <h3>Stats</h3>
+        <div class="home-section further-stats-section color2">
+            <h2>Game Stats</h2>
             <p><strong>Games: </strong><span class="games">No Data</span></p>
             <p><strong>Fastest Win: </strong><span class="fastest-win">No Data</span></p>
             <p><strong>Average Win: </strong><span class="average-win">No Data</span></p>
             <p><strong>Fastest Loss: </strong><span class="fastest-loss">No Data</span></p>
             <p><strong>Average Loss: </strong><span class="average-loss">No Data</span></p>
+        </div>
 
-            <h3>Themes</h3>
+        <div class="home-section theme-section color2">
+            <h2>Theme</h2>
             <div class="themes">
                 <div class="theme blue selected">
                     <div class="div"></div>
@@ -90,8 +107,10 @@
                     <div class="div"></div>
                 </div>
             </div>
+        </div>
 
-            <h3>Your Details</h3>
+        <div class="home-section details-section color2">
+            <h2>Your Details</h2>
             <div class="inputs">
                 <input class="name" type="text" placeholder="" />
                 <input class="username" type="text" placeholder="" />
@@ -102,7 +121,7 @@
             </div>
         </div>
 
-        <button class="play-button color2">Play</button>
+        <button class="play-button play-button-section color2">Start New Game</button>
     </section>
 </body>
 </html>

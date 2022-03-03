@@ -17,8 +17,8 @@ window.onload = () => {
 
         document.querySelector(".wl-text").textContent = "Win : Tie : Loss"
         document.querySelector(".wl-subtext").textContent = "Ratio " + (playerData.wins || 0) + " : " + (playerData.ties || 0) + " : " + (playerData.losses || 0)
-        document.querySelector(".win-progress").style.width = playerData.wins ? Math.floor(playerData.wins / playerData.games * 100) + "%" : "0%"
-        document.querySelector(".tie-progress").style.width = playerData.ties ? Math.floor(playerData.ties / playerData.games * 100) + "%" : "0%"
+        document.querySelector(".win-progress").style.width = playerData.wins ? (playerData.wins / playerData.games * 100) + "%" : "0%"
+        document.querySelector(".tie-progress").style.width = playerData.ties ? (playerData.ties / playerData.games * 100) + "%" : "0%"
 
         document.querySelector(".games").textContent = playerData.games || "0"
         document.querySelector(".fastest-win").textContent = playerData.fastestWin !== undefined ? (playerData.fastestWin + (playerData.fastestWin === 1 ? " Turn" : " Turns")) : "No Data"
@@ -50,13 +50,15 @@ window.onload = () => {
     }
 }
 
-document.querySelector(".play-button").onclick = () => {
-    if (localStorage.getItem("account")) {
-        window.location.href = "./computer.html"
-    } else {
-        window.location.href = "./welcome.html"
+document.querySelectorAll(".play-button").forEach(button => {
+    button.onclick = () => {
+        if (localStorage.getItem("account")) {
+            window.location.href = "./computer.html"
+        } else {
+            window.location.href = "./welcome.html"
+        }
     }
-}
+})
 
 document.querySelector(".back-button").onclick = () => {
     document.querySelector(".collectables").style.display = "none"
