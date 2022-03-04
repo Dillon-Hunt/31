@@ -1,16 +1,23 @@
 class Game {
-    constructor(config) {
+      constructor (config) {
        this.element = config.element
        this.cardCount = config.cardCount || 4
        this.playerCards = []
        this.opponentCards = []
        this.turn = "player"
-       this.playerData = JSON.parse(localStorage.getItem("account") || {})
-       this.foods = JSON.parse(localStorage.getItem("foods"))
-       this.accessible = this.playerData.accessible || false
+       this.foods = getFoods()
+       this.accessible = localStorage.accessible || false
     }
 
-    startGame() {
+    async getUserData() {
+        var userData = await getUserData()
+        document.querySelector(".loading").style.display = "none"
+        return userData
+    }
+
+    async startGame() {
+        this.userData = await this.getUserData()
+        
         for (var i = 0; i < this.cardCount; i++) {
             this.playerCards[i] = new Card({
                 card: this.deck.drawCard(),

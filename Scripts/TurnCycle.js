@@ -393,9 +393,7 @@ class TurnCycle {
             var index = Math.floor(Math.random() * foodsArray.length);
             var randomFood = foodsArray[index];
 
-            this.game.foods[this.game.foods.indexOf(randomFood)].amount++
-
-            localStorage.setItem("foods", JSON.stringify(this.game.foods))
+            this.game.userData.foods[randomFood.name.toLowerCase().replaceAll(" ", "")] += 1
             
             document.querySelector(".open-button").onclick = () => {
                 document.querySelector(".open-button").style.display = "none"
@@ -428,7 +426,7 @@ class TurnCycle {
                     setTimeout(() => {
                         document.querySelector(".found-message-tier").textContent = randomFood.tier
                         document.querySelector(".found-message-tier").style.display = "block"
-                        document.querySelector(".found-message").textContent = this.game.playerData.username + " found a " + randomFood.name + "."
+                        document.querySelector(".found-message").textContent = this.game.userData.userInfo.username + " found a " + randomFood.name + "."
                         document.querySelector(".found-message").style.display = "block"
                     }, 200)
                 }, 1000)
@@ -441,13 +439,13 @@ class TurnCycle {
 
             // Update DOM
             document.querySelector(".game-over").classList.add("victory")
-            document.querySelector(".game-over-title").textContent = this.game.playerData.username + " Wins"
+            document.querySelector(".game-over-title").textContent = this.game.userData.userInfo.username + " Wins"
             document.querySelector(".game-over-subtitle").textContent = "The Computer cowers in the shame of it's defeat."
 
-            // Add new data to playerData
-            this.game.playerData.wins = this.game.playerData.wins ? this.game.playerData.wins + 1 : 1
-            this.game.playerData.averageWin = this.game.playerData.averageWin ? (this.game.playerData.averageWin + this.turns) / 2 : this.turns
-            this.game.playerData.fastestWin = this.game.playerData.fastestWin ? (this.game.playerData.fastestWin < this.turns ? this.game.playerData.fastestWin : this.turns) : this.turns
+            // Add new data to userData
+            this.game.userData.stats.wins += 1
+            this.game.userData.stats.averageWin = this.game.userData.stats.averageWin !== 0 ? (this.game.userData.stats.averageWin + this.turns) / 2 : this.turns
+            this.game.userData.stats.fastestWin = this.game.userData.stats.fastestWin !== 0 ? (this.game.userData.stats.fastestWin < this.turns ? this.game.userData.stats.fastestWin : this.turns) : this.turns
         } else if (this.winner === "opponent") {
             // Case: there is a winner and it is the opponent
             this.points += 25
@@ -457,10 +455,10 @@ class TurnCycle {
             document.querySelector(".game-over-title").textContent = "Computer Wins"
             document.querySelector(".game-over-subtitle").textContent = "Ha, You just got beaten by the Computer."
 
-            // Add new data to playerData
-            this.game.playerData.losses = this.game.playerData.losses ? this.game.playerData.losses + 1 : 1
-            this.game.playerData.averageLoss = this.game.playerData.averageLoss ? (this.game.playerData.averageLoss + this.turns) / 2 : this.turns
-            this.game.playerData.fastestLoss = this.game.playerData.fastestLoss ? (this.game.playerData.fastestLoss < this.turns ? this.game.playerData.fastestLoss : this.turns) : this.turns
+            // Add new data to userData
+            this.game.userData.stats.losses += 1
+            this.game.userData.stats.averageLoss = this.game.userData.stats.averageLoss !== 0 ? (this.game.userData.stats.averageLoss + this.turns) / 2 : this.turns
+            this.game.userData.stats.fastestLoss = this.game.userData.stats.fastestLoss !== 0 ? (this.game.userData.stats.fastestLoss < this.turns ? this.game.userData.stats.fastestLoss : this.turns) : this.turns
         } else if (this.winner === "tie") {
             // Case: there is a winner and it is a tie
             this.points += 50
@@ -470,8 +468,8 @@ class TurnCycle {
             document.querySelector(".game-over-title").textContent = "Tie"
             document.querySelector(".game-over-subtitle").textContent = "Wait, how is that even possible? What a scam!"
 
-            // Add new data to playerData
-            this.game.playerData.ties = this.game.playerData.ties ? this.game.playerData.ties + 1 : 1
+            // Add new data to userData
+            this.game.userData.stats.ties += 1
         }
 
         // Update and reveal all opponentCards
@@ -479,9 +477,9 @@ class TurnCycle {
             card.update(card.card, true)
         })
 
-        // Add new data to playerData and save to localStorage
-        this.game.playerData.games = this.game.playerData.games ? this.game.playerData.games + 1 : 1
-        localStorage.setItem("account", JSON.stringify(this.game.playerData))
+        // Add new data to userData and save
+        this.game.userData.stats.games += 1
+        setUserData(this.game.userData)
 
         // Update points & level
         this.updatePoints(true)
@@ -489,12 +487,12 @@ class TurnCycle {
 
     updatePoints(gameOver) {
         // Update points & level
-        this.points = this.points || (this.game.playerData.points || 0)
+        this.points = this.points || (this.game.userData.stats.points || 0)
 
-        if (this.points > (this.game.playerData.points || 0)) {
+        if (this.points > (this.game.userData.stats.points || 0)) {
             // Case: gained points
-            document.querySelector(".points-up").textContent = "+" + (this.points - this.game.playerData.points)
-            this.game.playerData.points = this.points
+            document.querySelector(".points-up").textContent = "+" + (this.points - this.game.userData.stats.points)
+            this.game.userData.stats.points = this.points
             document.querySelector(".points-up").style.display = "block"
 
             setTimeout(() => {
@@ -502,9 +500,9 @@ class TurnCycle {
             }, 5000)
         }
 
-        var level = Math.floor((this.game.playerData.points || 0) / 500) // Will change to be exponentially harder
+        var level = Math.floor((this.game.userData.stats.points || 0) / 500) // Will change to be exponentially harder
 
-        if (level > (this.game.playerData.level || 0)) {
+        if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
 
             if (gameOver) {
@@ -516,7 +514,7 @@ class TurnCycle {
                 document.querySelector(".level-up-message").textContent = "LEVEL UP"
                 document.querySelector(".level-up-level").textContent = level
             }
-            this.game.playerData.level = level
+            this.game.userData.stats.level = level
             document.querySelector(".level-up").style.display = "block"
 
             setTimeout(() => {
@@ -524,9 +522,10 @@ class TurnCycle {
             }, 5000)
         }
 
-        document.querySelector(".level-value").textContent = this.game.playerData.level || 0
-        document.querySelector(".points-value").textContent = this.game.playerData.points || 0
-        localStorage.setItem("account", JSON.stringify(this.game.playerData))
+        document.querySelector(".level-value").textContent = this.game.userData.stats.level
+        document.querySelector(".points-value").textContent = this.game.userData.stats.points
+
+        setUserData(this.game.userData)
 
     }
 
@@ -630,7 +629,7 @@ class TurnCycle {
                 var isQuadruple = false
                 var removeSuits = []
 
-                var doRandom = Math.floor(Math.random() * (this.game.playerData.level || 0))
+                var doRandom = Math.floor(Math.random() * (this.game.userData.level || 0))
 
                 if (doRandom === 0) {
                     selection = Math.floor(Math.random() * 2) + 1
@@ -787,7 +786,7 @@ class TurnCycle {
                 // Select a random card to discard (Default Value)
                 var selection = 0
 
-                doRandom = Math.floor(Math.random() * (this.game.playerData.level || 0))
+                doRandom = Math.floor(Math.random() * (this.game.userData.level || 0))
 
                 if (doRandom === 0) {
                     selection = Math.floor(Math.random() * this.game.opponentCards.length) + 1
@@ -1030,6 +1029,10 @@ class TurnCycle {
 
                 // Delay 100 ms so the player can see the computer having it's turn
                 await this.wait(1000)
+
+                if (selection > 5) {
+                    selection = 5
+                }
 
                 // Discard selected card
                 await this.discard(selection)

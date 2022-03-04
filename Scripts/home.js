@@ -1,62 +1,72 @@
-window.onload = () => {
-    updateTheme()
-    if (!localStorage.getItem("account")) {
-        window.location.href = "./welcome.html"
-    } else {
-        playerData = JSON.parse(localStorage.getItem("account") || {})
-        document.querySelector(".player-stats").textContent = playerData.name + "'s Stats" || "No Data" 
+window.onload = async () => {
+    updateTheme() // Keep Theme Local
 
-        document.querySelector(".level-text").textContent = "Level " + (playerData.level || 0)
-        document.querySelector(".level-subtext").textContent = (500 - ((playerData.points || 0) % 500)) + " Points Until Next Level"
-        document.querySelector(".level-progress").style.width = (((playerData.points || 0) % 500) / 500 * 100) + "%"
+    userData = await authUser()
 
-        // Fake data at the moment
+
+    if (userData !== "Error") {
+        document.querySelector(".level-text").textContent = "Level " + userData.stats.level
+
+        getFoods().forEach(food => { // Repeat for achievements
+            element = document.createElement("div")
+            element.classList.add("item")
+            amount = userData.foods[food.name.toLowerCase().replaceAll(" ", "")]
+            if (amount == 0) {
+                element.innerHTML = (`
+                    <img class="none" src="./images/${food.name.toLowerCase()}.png">
+                    <p>Unknown</p>
+                `)
+            } else {
+                element.innerHTML = (`
+                    <img src="./images/${food.name.toLowerCase()}.png">
+                    <p>${food.name}</p>
+                    <p class="amount">x${amount}</p>
+                `)
+            }
+            document.querySelector("." + food.tier).appendChild(element)
+        })
+        
+        // Title
+        document.querySelector(".player-stats").textContent = userData.userInfo.name + "'s Stats"
+
+        // Level
+        document.querySelector(".level-text").textContent = "Level " + userData.stats.level
+        document.querySelector(".level-subtext").textContent = (500 - (userData.stats.points % 500)) + " Points Until Next Level"
+        document.querySelector(".level-progress").style.width = ((userData.stats.points % 500) / 500 * 100) + "%"
+
+        // Score
+
+        // Win : Tie : Loss Ratio
+        document.querySelector(".wl-text").textContent = "Win : Tie : Loss"
+        document.querySelector(".wl-subtext").textContent = "Ratio " + userData.stats.wins + " : " + userData.stats.ties + " : " + userData.stats.losses
+        document.querySelector(".win-progress").style.width = userData.stats.wins ? (userData.stats.wins / userData.stats.games * 100) + "%" : "0%"
+        document.querySelector(".tie-progress").style.width = userData.stats.ties ? (userData.stats.ties / userData.stats.games * 100) + "%" : "0%"
+
+        // Stats
+        document.querySelector(".games").textContent = userData.stats.games || "0"
+        document.querySelector(".fastest-win").textContent = userData.stats.fastestWin !== 0 ? (userData.stats.fastestWin + (userData.stats.fastestWin === 1 ? " Turn" : " Turns")) : "No Data"
+        document.querySelector(".average-win").textContent = userData.stats.averageWin !== 0 ? (Math.floor(userData.stats.averageWin) + (Math.floor(userData.stats.averageWin) === 1 ? "Turn" : " Turns")) : "No Data"
+        document.querySelector(".fastest-loss").textContent = userData.stats.fastestLoss !== 0 ? (userData.stats.fastestLoss + (userData.stats.fastestLoss === 1 ? " Turn" : " Turns")) :  "No Data"
+        document.querySelector(".average-loss").textContent = userData.stats.averageLoss !== 0 ? (Math.floor(userData.stats.averageLoss) + (Math.floor(userData.stats.averageLoss) === 1 ? " Turn" : " Turns")) :  "No Data"
+    
+        // Settings
+        document.querySelector(".name").placeholder = userData.userInfo.name
+        document.querySelector(".username").placeholder = userData.userInfo.username
+        document.querySelector(".accessability").checked = localStorage.accessible === "1" ? 1 : 0
+
+        document.querySelector(".loading").style.display = "none"
+
+        /* Fake data at the moment
         document.querySelector(".score-text").textContent = "Score " + 525
         document.querySelector(".score-subtext").textContent = "Win " + 5 + " more games to increase your score"
         document.querySelector(".score-progress").style.width = "50%" // To Do: Create score
-
-        document.querySelector(".wl-text").textContent = "Win : Tie : Loss"
-        document.querySelector(".wl-subtext").textContent = "Ratio " + (playerData.wins || 0) + " : " + (playerData.ties || 0) + " : " + (playerData.losses || 0)
-        document.querySelector(".win-progress").style.width = playerData.wins ? (playerData.wins / playerData.games * 100) + "%" : "0%"
-        document.querySelector(".tie-progress").style.width = playerData.ties ? (playerData.ties / playerData.games * 100) + "%" : "0%"
-
-        document.querySelector(".games").textContent = playerData.games || "0"
-        document.querySelector(".fastest-win").textContent = playerData.fastestWin !== undefined ? (playerData.fastestWin + (playerData.fastestWin === 1 ? " Turn" : " Turns")) : "No Data"
-        document.querySelector(".average-win").textContent = playerData.averageWin !== undefined ? (Math.floor(playerData.averageWin) + (Math.floor(playerData.averageWin) === 1 ? "Turn" : " Turns")) : "No Data" // Change to average win
-        document.querySelector(".fastest-loss").textContent = playerData.fastestLoss !== undefined ? (playerData.fastestLoss + (playerData.fastestLoss === 1 ? " Turn" : " Turns")) :  "No Data"
-        document.querySelector(".average-loss").textContent = playerData.averageLoss !== undefined ? (Math.floor(playerData.averageLoss) + (Math.floor(playerData.averageLoss) === 1 ? " Turn" : " Turns")) :  "No Data"
-    
-        document.querySelector(".name").placeholder = playerData.name
-        document.querySelector(".username").placeholder = playerData.username
-        document.querySelector(".accessability").checked = playerData.accessible ? 1 : 0
-
-            /* 
-        if (playerData.games && playerData.games > 9) {
-            // Calculate player score
-            var playerScore = 0
-            playerScore += (playerData.wins || 0) / (playerData.losses || 1) * 1000
-            playerScore += playerData.games * (playerData.averageLoss || 0)
-            playerScore -= playerData.games * (playerData.averageWin || 0)
-            playerScore += 500 - (playerData.fastestWin * 20)
-            playerScore -= 500 - (playerData.fastestLoss * 20)
-            document.querySelector(".score").textContent = Math.floor(playerScore)
-        } else {
-            document.querySelector(".score").textContent = "Play at least 10 games"
-        }
         */
-
-        // Destroy playerData variable to stop cheating
-        delete window.playerData
     }
 }
 
 document.querySelectorAll(".play-button").forEach(button => {
     button.onclick = () => {
-        if (localStorage.getItem("account")) {
-            window.location.href = "./computer.html"
-        } else {
-            window.location.href = "./welcome.html"
-        }
+        window.location.href = "./computer.html"
     }
 })
 
@@ -69,12 +79,18 @@ document.querySelector(".collectables-button").onclick = () => {
 }
 
 
-document.querySelector(".save-button").onclick = () => {
-    playerData = JSON.parse(localStorage.getItem("account") || {})
+document.querySelector(".save-button").onclick = async () => {
+    userData = await getUserData()
 
-    playerData.name = document.querySelector(".name").value !== "" ? document.querySelector(".name").value : playerData.name 
-    playerData.username = document.querySelector(".username").value !== "" ? document.querySelector(".username").value : playerData.username
-    playerData.accessible = document.querySelector(".accessability").checked
-    localStorage.setItem("account", JSON.stringify(playerData))
-    window.location.href = "./index.html"
+    userData.userInfo.name = document.querySelector(".name").value !== "" ? document.querySelector(".name").value : userData.userInfo.name 
+    userData.userInfo.username = document.querySelector(".username").value !== "" ? document.querySelector(".username").value : userData.userInfo.username
+
+    document.querySelector(".name").placeholder = userData.userInfo.name
+    document.querySelector(".name").value = ""
+    document.querySelector(".username").placeholder = userData.userInfo.username
+    document.querySelector(".username").value = ""
+
+    setUserData(userData)
+
+    localStorage.accessible = document.querySelector(".accessability").checked
 }

@@ -48,33 +48,61 @@ section > p {
     line-height: 19px;
 }
 
+.sign-buttons {
+    margin: 20px auto;
+    display: block;;
+    width: fit-content;
+}
+
 .sign-up-button {
     width: 100px;
     height: 50px;
     border: none;
-    display: block;
-    margin: 20px auto;
+    display: inline-block;
+    margin: 10px;
+    color: inherit;
+    background: #3D4260;
+    border-radius: 10px;
+}
+
+.sign-in-button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    display: inline-block;
+    margin: 10px;
     color: inherit;
     background: #3D4260;
     border-radius: 10px;
 }
 
 /* Sign Up Screen */
+body {
+    position: relative;
+}
+
 .toggle {
     font-family: 'Roboto', sans-serif;
     position: absolute;
     width: calc(300px + 1vh);
-    height: calc(200px + 1vh);
     background-color: inherit;
     left: 50%;
-    top: 50%;
+    bottom: 50vh;
     z-index: 2;
 
     border-radius: 5px;
 
     display: none;
 
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, 50%)
+}
+
+.sign-up {
+    height: 290px;
+}
+
+.sign-in {
+    height: 200px;
 }
 
 .toggle > h2 {
@@ -112,6 +140,23 @@ section > p {
 
 .inputs > input {
     margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.toggle > .close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    transform: none;
+    height: 24px;
+    padding: 4px;
+    width: 24px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 900;
+    left: auto;
 }
 
 .toggle > button {
