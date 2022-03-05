@@ -1,4 +1,4 @@
-function signUp(email, password, userData) {
+async function signUp(email, password, userData) {
     firebase.auth().createUserWithEmailAndPassword(
         email,
         password,
@@ -10,6 +10,8 @@ function signUp(email, password, userData) {
         localStorage.password = password
 
         userRef = firebase.firestore().collection("Users").doc(userId).set(userData)
+
+        return 200
     })
     .catch((error) =>  {
         // Handle Errors here.

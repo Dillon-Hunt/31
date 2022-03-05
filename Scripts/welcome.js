@@ -33,7 +33,7 @@ document.querySelector(".sign-in-submit").onclick = () => {
     signIn(document.querySelector(".sign-in-email").value, document.querySelector(".sign-in-password").value)
 }
 
-document.querySelector(".submit").onclick = () => {
+document.querySelector(".submit").onclick = async () => {
     const analytics = firebase.analytics();
     analytics.logEvent("signup")
     if (document.querySelector(".email").value !== "" && document.querySelector(".password").value !== "") {
@@ -91,7 +91,7 @@ document.querySelector(".submit").onclick = () => {
                 firstGame: false,
             }
         }
-        signUp(document.querySelector(".email").value, document.querySelector(".password").value, userData)
+        await signUp(document.querySelector(".email").value, document.querySelector(".password").value, userData)
 
         localStorage.accessible = document.querySelector(".accessability").checked
 
