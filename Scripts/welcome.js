@@ -36,6 +36,7 @@ document.querySelector(".sign-in-submit").onclick = () => {
 document.querySelector(".submit").onclick = async () => {
     const analytics = firebase.analytics();
     analytics.logEvent("signup")
+    
     if (document.querySelector(".email").value !== "" && document.querySelector(".password").value !== "") {
         userData = {
             userInfo: {
@@ -92,9 +93,7 @@ document.querySelector(".submit").onclick = async () => {
             }
         }
         await signUp(document.querySelector(".email").value, document.querySelector(".password").value, userData)
-
         localStorage.accessible = document.querySelector(".accessability").checked
-
         window.location.href = "./tutorial.html"
     }
 }

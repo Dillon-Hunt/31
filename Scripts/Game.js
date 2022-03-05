@@ -10,14 +10,10 @@ class Game {
        this.accessible = localStorage.accessible || false
     }
 
-    async getUserData() {
-        var userData = await getUserData()
-        document.querySelector(".loading").style.display = "none"
-        return userData
-    }
-
     async startGame() {
-        this.userData = await this.getUserData()
+        this.userData = await getUserData()
+        console.log(this.userData)
+        document.querySelector(".loading").style.display = "none"
         this.analytics.setUserProperties({ level: this.userData.stats.level })
         this.analytics.logEvent("start_game")
 
@@ -72,7 +68,7 @@ class Game {
         this.turnCycle.init()
     }
 
-    init() {
+    async init() {
         this.deck = new Deck({
             accessible: this.accessible,
         })
