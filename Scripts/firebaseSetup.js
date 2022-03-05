@@ -5,16 +5,11 @@ function signUp(email, password, userData) {
     )
     .then((user) => {
         userId = user.user.uid
-
         localStorage.userId = userId
         localStorage.email = email
         localStorage.password = password
 
         userRef = firebase.firestore().collection("Users").doc(userId).set(userData)
-
-        if (user) {
-            console.log(user.user.uid)
-        }
     })
     .catch((error) =>  {
         // Handle Errors here.

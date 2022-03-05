@@ -14,6 +14,34 @@
     <link rel="stylesheet" type="text/css" href="./Styles/landscape.css" media="screen and (orientation: landscape) and (max-device-width: 1000px)">
     
     <script defer src="./Scripts/tutorial.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script><!--Mabybe not-->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDPUIh7gf2WdxAr1WH6NbUvyW9TeXpVliA",
+          authDomain: "card-game-d41d0.firebaseapp.com",
+          projectId: "card-game-d41d0",
+          storageBucket: "card-game-d41d0.appspot.com",
+          messagingSenderId: "567692754175",
+          appId: "1:567692754175:web:eb43c4f434ae8b67b160ca",
+          measurementId: "G-7EKB7ZBK7Z",
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script defer src="./Scripts/firebase.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');

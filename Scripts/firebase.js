@@ -18,11 +18,10 @@ async function authUser() {
             resolve(userData)
         })
         .catch(error => {
-
+            console.log(error)
             localStorage.removeItem("userId")
             localStorage.removeItem("email")
             localStorage.removeItem("password")
-
             window.location.href = "./welcome.html"
 
             resolve("Error")
