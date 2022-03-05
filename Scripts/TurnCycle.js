@@ -372,6 +372,10 @@ class TurnCycle {
 
         if (this.winner === "player") {
             // Case: there is a winner and it is the player
+            this.game.analytics.logEvent("game_over", {
+                winner: "player",
+                turns: this.turns
+            })
             this.points += 100
 
             document.querySelector(".reward").style.display = "block"
@@ -392,6 +396,12 @@ class TurnCycle {
             // Pick a weighted random food
             var index = Math.floor(Math.random() * foodsArray.length);
             var randomFood = foodsArray[index];
+
+
+            this.game.analytics.logEvent("new_fruit", {
+                name: randomFood.name,
+                tier: randomFood.tier
+            })
 
             this.game.userData.foods[randomFood.name.toLowerCase().replaceAll(" ", "")] += 1
             
@@ -448,6 +458,10 @@ class TurnCycle {
             this.game.userData.stats.fastestWin = this.game.userData.stats.fastestWin !== 0 ? (this.game.userData.stats.fastestWin < this.turns ? this.game.userData.stats.fastestWin : this.turns) : this.turns
         } else if (this.winner === "opponent") {
             // Case: there is a winner and it is the opponent
+            this.game.analytics.logEvent("game_over", {
+                winner: "opponent",
+                turns: this.turns
+            })
             this.points += 25
 
             // Update DOM
@@ -461,6 +475,10 @@ class TurnCycle {
             this.game.userData.stats.fastestLoss = this.game.userData.stats.fastestLoss !== 0 ? (this.game.userData.stats.fastestLoss < this.turns ? this.game.userData.stats.fastestLoss : this.turns) : this.turns
         } else if (this.winner === "tie") {
             // Case: there is a winner and it is a tie
+            this.game.analytics.logEvent("game_over", {
+                winner: "tie",
+                turns: this.turns
+            })
             this.points += 50
 
             // Update DOM
@@ -504,6 +522,9 @@ class TurnCycle {
 
         if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
+
+            this.game.analytics.setUserProperties({ level: level })
+            this.game.analytics.logEvent("level_up")
 
             if (gameOver) {
                 document.querySelector(".next-button-0").onclick = () => {

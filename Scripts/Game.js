@@ -6,6 +6,7 @@ class Game {
        this.opponentCards = []
        this.turn = "player"
        this.foods = getFoods()
+       this.analytics = firebase.analytics();
        this.accessible = localStorage.accessible || false
     }
 
@@ -17,7 +18,9 @@ class Game {
 
     async startGame() {
         this.userData = await this.getUserData()
-        
+        this.analytics.setUserProperties({ level: this.userData.stats.level })
+        this.analytics.logEvent("start_game")
+
         for (var i = 0; i < this.cardCount; i++) {
             this.playerCards[i] = new Card({
                 card: this.deck.drawCard(),
@@ -40,6 +43,7 @@ class Game {
         }
 
         document.querySelector(".restart-button").onclick = () => {
+            this.analytics.logEvent("new_game")
             window.location.reload() // Start New Game Here
         }
 

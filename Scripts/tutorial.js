@@ -4,4 +4,6 @@ window.onload = () => {
             window.location.href = "./computer.html"
         }
     })
+    const analytics = firebase.analytics();
+    analytics.logEvent("tutorial")
 }

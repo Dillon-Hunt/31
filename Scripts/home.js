@@ -1,6 +1,9 @@
 window.onload = async () => {
     updateTheme() // Keep Theme Local
 
+    const analytics = firebase.analytics()
+    analytics.logEvent("home_page")
+
     userData = await authUser()
 
 

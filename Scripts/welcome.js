@@ -1,6 +1,9 @@
 window.onload = () => {
     if (localStorage.userId && localStorage.email && localStorage.password) {
         window.location.href = "./index.html"
+    } else {
+        const analytics = firebase.analytics();
+        analytics.logEvent("welcome")
     }
 }
 
@@ -25,10 +28,14 @@ document.querySelector(".sign-in-close").onclick = () => {
 }
 
 document.querySelector(".sign-in-submit").onclick = () => {
+    const analytics = firebase.analytics();
+    analytics.logEvent("signin")
     signIn(document.querySelector(".sign-in-email").value, document.querySelector(".sign-in-password").value)
 }
 
 document.querySelector(".submit").onclick = () => {
+    const analytics = firebase.analytics();
+    analytics.logEvent("signup")
     if (document.querySelector(".email").value !== "" && document.querySelector(".password").value !== "") {
         userData = {
             userInfo: {

@@ -1,10 +1,14 @@
 (function () {
-    updateTheme()
-    
-    const game = new Game({
-        element: document.querySelector(".game-container")
-    })
+    if (localStorage.userId === undefined) {
+        window.location.href = "./welcome.html"
+    } else {
+        updateTheme()
 
-    game.init()
+        const game = new Game({
+            element: document.querySelector(".game-container")
+        })
+
+        game.init()
+    }
 
 })();
