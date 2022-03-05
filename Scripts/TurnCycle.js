@@ -522,7 +522,6 @@ class TurnCycle {
 
         if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
-
             this.game.analytics.setUserProperties({ level: level })
             this.game.analytics.logEvent("level_up")
 

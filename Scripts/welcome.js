@@ -95,6 +95,6 @@ document.querySelector(".submit").onclick = () => {
 
         localStorage.accessible = document.querySelector(".accessability").checked
 
-        //window.location.href = "./tutorial.html"
+        window.location.href = "./tutorial.html"
     }
 }
