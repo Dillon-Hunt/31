@@ -12,7 +12,6 @@ class Game {
 
     async startGame() {
         this.userData = await getUserData()
-        console.log(this.userData)
         document.querySelector(".loading").style.display = "none"
         this.analytics.setUserProperties({ level: this.userData.stats.level })
         this.analytics.logEvent("start_game")

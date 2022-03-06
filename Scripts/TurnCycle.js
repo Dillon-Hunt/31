@@ -649,8 +649,6 @@ class TurnCycle {
                 var isQuadruple = false
                 var removeSuits = []
 
-                console.log(this.game.userData.stats.level)
-
                 var doRandom = Math.floor(Math.random() * (this.game.userData.stats.level || 0))
 
                 if (doRandom === 0) {
