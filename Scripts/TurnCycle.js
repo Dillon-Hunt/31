@@ -649,7 +649,9 @@ class TurnCycle {
                 var isQuadruple = false
                 var removeSuits = []
 
-                var doRandom = Math.floor(Math.random() * (this.game.userData.level || 0))
+                console.log(this.game.userData.stats.level)
+
+                var doRandom = Math.floor(Math.random() * (this.game.userData.stats.level || 0))
 
                 if (doRandom === 0) {
                     selection = Math.floor(Math.random() * 2) + 1
@@ -806,7 +808,7 @@ class TurnCycle {
                 // Select a random card to discard (Default Value)
                 var selection = 0
 
-                doRandom = Math.floor(Math.random() * (this.game.userData.level || 0))
+                doRandom = Math.floor(Math.random() * (this.game.userData.stats.level || 0))
 
                 if (doRandom === 0) {
                     selection = Math.floor(Math.random() * this.game.opponentCards.length) + 1
