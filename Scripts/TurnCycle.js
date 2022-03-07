@@ -379,6 +379,8 @@ class TurnCycle {
             })
             this.points += 100
 
+            this.game.userData.achievements.winStreak.value += 1
+
             document.querySelector(".reward").style.display = "block"
 
             var foodsArray = [];
@@ -465,6 +467,8 @@ class TurnCycle {
             })
             this.points += 25
 
+            this.game.userData.achievements.winStreak.value = 0
+
             // Update DOM
             document.querySelector(".endscreen").classList.add("bust")
             document.querySelector(".game-over-title").textContent = "Computer Wins"
@@ -481,6 +485,8 @@ class TurnCycle {
                 turns: this.turns
             })
             this.points += 50
+
+            this.game.userData.achievements.winStreak.value = 0
 
             // Update DOM
             document.querySelector(".endscreen").classList.add("tie")
@@ -524,14 +530,15 @@ class TurnCycle {
         if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
             this.game.analytics.setUserProperties({ level: level })
-            this.game.analytics.logEvent("level_up")
+            this.game.analytics.logEvent("level_up", {
+                level: level
+            })
 
             if (gameOver) {
                 document.querySelector(".next-button-0").onclick = () => {
                     document.querySelector(".level-up-section").style.display = "none"
                 }
     
-                document.querySelector(".game-over").style.display = "block"
                 document.querySelector(".level-up-section").style.display = "block"
                 document.querySelector(".this-points").textContent = this.game.userData.stats.points - this.game.userData.stats.points % 500
                 document.querySelector(".next-points").textContent = (this.game.userData.stats.points - this.game.userData.stats.points % 500) + 500
@@ -547,11 +554,37 @@ class TurnCycle {
             }, 5000)
         }
 
+        if (this.game.userData.achievements.winStreak.value === this.game.userData.achievements.winStreak.goal) {
+            this.game.userData.achievements.winStreak.level += 1
+
+            this.game.analytics.logEvent("new_achievement", {
+                achievement: this.game.userData.achievements.winStreak.name,
+                level: this.game.userData.achievements.winStreak.level
+            })
+            document.querySelector(".game-over").style.display = "block"
+
+            document.querySelector(".next-button-1").onclick = () => {
+                document.querySelector(".achievement-section").style.display = "none"
+
+                if (!gameOver) {
+                    document.querySelector(".game-over").style.display = "block"
+                }
+            }
+
+            document.querySelector(".achievement-section").style.display = "block"
+            document.querySelector(".achievement-message").textContent = this.game.userData.achievements.winStreak.text.replaceAll("{GOAL}", this.game.userData.achievements.winStreak.goal)
+            this.game.userData.achievements.winStreak.goal += this.game.userData.achievements.winStreak.increment
+            document.querySelector(".achievement-name-next-text").textContent = this.game.userData.achievements.winStreak.nextText.replaceAll("{GOAL}", this.game.userData.achievements.winStreak.goal)
+
+            document.querySelector(".achievement-name-top").textContent = this.game.userData.achievements.winStreak.name + " Level " +  this.game.userData.achievements.winStreak.level
+            document.querySelector(".achievement-name").textContent = "Card Hero"
+            document.querySelector(".achievement-name-next").textContent = "Level " + parseInt(this.game.userData.achievements.winStreak.level + 1)
+        }
+
         document.querySelector(".level-value").textContent = this.game.userData.stats.level
         document.querySelector(".points-value").textContent = this.game.userData.stats.points
 
         setUserData(this.game.userData)
-
     }
 
     async turn() {

@@ -87,9 +87,14 @@ document.querySelector(".submit").onclick = async () => {
             }, 
 
             achievements: {
-                signUp: true,
-                tutorial: false,
-                firstGame: false,
+                winStreak: {
+                    name: "Card Hero",
+                    goal: 5,
+                    increment: 5,
+                    value: 0,
+                    text: "Congratulations, you won {GOAL} consecutive games against the computer. ",
+                    nextText: "Win {GOAL} consecutive games against the computer.",
+                }
             }
         }
         await signUp(document.querySelector(".email").value, document.querySelector(".password").value, userData)

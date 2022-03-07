@@ -29,7 +29,35 @@
     border-radius: 5px;
 }
 
+.achievement-section {
+    top: 0;
+    left: 0;
+    background-color: #00CFEB;
+    width: 100vw;
+    height: 100vh;
+    z-index: 6;
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+}
+
 .level-up-section-content {
+    color: #000 !important;
+    font-family: 'Roboto' !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #FFF;
+    transform: translate(-50%, -50%);
+    height: calc(60vh + 200px);
+    width: calc(90vw - 40px);
+    border-radius: 10px;
+
+    z-index: 5;
+    box-shadow: 0 0 10px 2px #00000025;
+}
+
+.achievement-section-content {
     color: #000 !important;
     font-family: 'Roboto' !important;
     position: absolute;
@@ -47,6 +75,9 @@
 
 @media screen and (min-width: 540px) {
     .level-up-section-content {
+        width: 500px;
+    }
+    .achievement-section-content {
         width: 500px;
     }
 }
@@ -80,6 +111,10 @@
     background-color: #EBC500;
 }
 
+.achievement-banner {
+    background-color: #00CFEB;
+}
+
 .centered-text {
     width: 80%;
     margin: 5px auto;
@@ -94,7 +129,26 @@
     display: block;
 }
 
+.achievement-section-content > img {
+    width: calc(1084px / 5);
+    height: calc(843px / 5);
+    margin: 10px auto;
+    margin-top: 2vw;
+    display: block;
+}
+
 .level-up-section-content > .level-up-message {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin: 10px 40px;
+    color: #000000;
+}
+
+.achievement-section-content > .achievement-message {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -115,10 +169,21 @@
     color: #2F2F2F;
 }
 
+.achievement-section-content > .achievement-name {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 5px;
+    text-align: center;
+    color: #2F2F2F;
+}
+
 .reward {
     color: #000 !important;
     font-family: 'Roboto' !important;
     position: absolute;
+    display: none;
     top: 50%;
     left: 50%;
     background-color: rgb(255, 255, 255);
@@ -198,6 +263,19 @@
 }
 
 .level-up-section-content > button {
+    position: absolute;
+    width: 131px;
+    height: 59px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.achievement-section-content > button {
     position: absolute;
     width: 131px;
     height: 59px;
