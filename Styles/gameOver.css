@@ -1,88 +1,133 @@
 .game-over {
-    position: absolute;
-    width: calc(300px + 1vh);
-    height: calc(230px + 1vh);
-    left: 50%;
-    top: 50%;
-    z-index: 2;
-
-    border-radius: 5px;
-
-    display: none;
-
-    transform: translate(-50%, -50%)
+    display: none; 
 }
 
-.game-over.victory { 
+.endscreen.victory { 
     background: #42A539;
     display: block;
 }
 
-.game-over.bust { 
+.endscreen.bust { 
     background: #BD2F2F;
     display: block;
 }
 
-.game-over.tie { 
+.endscreen.tie { 
     background: #B6943E;
     display: block;
 }
 
 .level-up-section {
-    bottom: -25%;
-    background-color: #fffab1;
-    width: 100%;
-    height: 150%;
-    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #EBC500;
+    width: 100vw;
+    height: 100vh;
+    z-index: 6;
     display: none;
     position: absolute;
     border-radius: 5px;
 }
 
-.level-up-section > img {
+.level-up-section-content {
+    color: #000 !important;
+    font-family: 'Roboto' !important;
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 60px;
-    transform: translateX(-50%);
+    background-color: #FFF;
+    transform: translate(-50%, -50%);
+    height: calc(60vh + 200px);
+    width: calc(90vw - 40px);
+    border-radius: 10px;
+
+    z-index: 5;
+    box-shadow: 0 0 10px 2px #00000025;
+}
+
+@media screen and (min-width: 540px) {
+    .level-up-section-content {
+        width: 500px;
+    }
+}
+
+.orange {
+    color: #FF7A00 !important;
+}
+
+.break {
+    width: 116px;
+    height: 4px;
+    background: #C9C9C9;
+    border-radius: 5px;
+    margin: calc(1vw + 15px) auto;
+    display: block;
+}
+
+.level-up-level-next {
+
+}
+
+.banner {
+    width: 100%;
+    margin-top: calc(2vw + 10px);
+    text-align: center;
+    padding: calc(.5vw + 5px) 0 !important;
+    color: #fff;
+}
+
+.level-up-banner {
+    background-color: #EBC500;
+}
+
+.centered-text {
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.level-up-section-content > img {
     width: calc(1084px / 5);
     height: calc(843px / 5);
-    image-rendering: pixelated;
+    margin: 10px auto;
+    margin-top: 2vw;
+    display: block;
 }
 
-.level-up-section > .level-up-message {
-    font-size: 35px;
-    left: 50%;
-    top: 190px;
-    transform: translateX(-50%);
-    position: absolute;
-    color: #000000;
+.level-up-section-content > .level-up-message {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
     text-align: center;
-    width: 90%;
-    font-family: 'Smooch Sans', sans-serif;
+    margin: 10px 40px;
+    color: #000000;
 }
 
-.level-up-section > .level-up-level {
-    font-size: 80px;
-    left: 50%;
-    top: 20px;
-    transform: translateX(-50%);
-    position: absolute;
-    color: #000000;
+.level-up-section-content > .level-up-level {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 5px;
     text-align: center;
-    width: 90%;
-    font-weight: 600;
-    font-family: 'Smooch Sans', sans-serif;
+    color: #2F2F2F;
 }
 
 .reward {
-    bottom: -25%;
-    background-color: #ffffff;
-    width: 100%;
-    height: 150%;
-    z-index: 2;
-    display: none;
+    color: #000 !important;
+    font-family: 'Roboto' !important;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-50%, -50%);
+    width: calc(300px + 1vh);
+    height: calc(345px + 1.5vh);
     border-radius: 5px;
+    z-index: 5;
+    box-shadow: 0 0 10px 2px #00000025;
 }
 
 .reward > img {
@@ -102,7 +147,6 @@
     top: 170px;
     transform: translateX(-50%);
     position: absolute;
-    color: #ffffff;
     text-align: center;
     width: 90%;
 }
@@ -153,7 +197,7 @@
     border-radius: 5px;
 }
 
-.level-up-section > button {
+.level-up-section-content > button {
     position: absolute;
     width: 131px;
     height: 59px;
@@ -166,7 +210,17 @@
     border-radius: 5px;
 }
 
-.game-over > .endscreen > h1 { 
+.game-over > .endscreen {
+    z-index: 2;
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    width: calc(300px + 1vh);height: calc(230px + 1.5vh);
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.endscreen > h1 { 
     margin: 20px 0 0 0;
     padding: 0;
     width: 100%;
@@ -180,7 +234,7 @@
     color: #FFFFFF;
 }
 
-.game-over > .endscreen > h2 { 
+.endscreen > h2 { 
     padding: 0 25px 10px 25px;
     width: 100%;
     font-family: 'Roboto', sans-serif;

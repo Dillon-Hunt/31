@@ -364,6 +364,7 @@ class TurnCycle {
         document.querySelector(".player-hand").classList.add("end")
         document.querySelector(".opponent-hand").classList.add("end")
         document.querySelector(".deck").classList.add("end")
+        document.querySelector(".game-over").style.display = "block"
 
         if (!this.winner) {
             // Case: the deck ran out
@@ -448,7 +449,7 @@ class TurnCycle {
             }
 
             // Update DOM
-            document.querySelector(".game-over").classList.add("victory")
+            document.querySelector(".endscreen").classList.add("victory")
             document.querySelector(".game-over-title").textContent = this.game.userData.userInfo.username + " Wins"
             document.querySelector(".game-over-subtitle").textContent = "The Computer cowers in the shame of it's defeat."
 
@@ -465,7 +466,7 @@ class TurnCycle {
             this.points += 25
 
             // Update DOM
-            document.querySelector(".game-over").classList.add("bust")
+            document.querySelector(".endscreen").classList.add("bust")
             document.querySelector(".game-over-title").textContent = "Computer Wins"
             document.querySelector(".game-over-subtitle").textContent = "Ha, You just got beaten by the Computer."
 
@@ -482,7 +483,7 @@ class TurnCycle {
             this.points += 50
 
             // Update DOM
-            document.querySelector(".game-over").classList.add("tie")
+            document.querySelector(".endscreen").classList.add("tie")
             document.querySelector(".game-over-title").textContent = "Tie"
             document.querySelector(".game-over-subtitle").textContent = "Wait, how is that even possible? What a scam!"
 
@@ -530,9 +531,13 @@ class TurnCycle {
                     document.querySelector(".level-up-section").style.display = "none"
                 }
     
+                document.querySelector(".game-over").style.display = "block"
                 document.querySelector(".level-up-section").style.display = "block"
-                document.querySelector(".level-up-message").textContent = "LEVEL UP"
-                document.querySelector(".level-up-level").textContent = level
+                document.querySelector(".this-points").textContent = this.game.userData.stats.points - this.game.userData.stats.points % 500
+                document.querySelector(".next-points").textContent = (this.game.userData.stats.points - this.game.userData.stats.points % 500) + 500
+                document.querySelector(".level-up-level-top").textContent = "Level " + level
+                document.querySelector(".level-up-level").textContent = "Level " + level
+                document.querySelector(".level-up-level-next").textContent = "Level " + parseInt(level + 1)
             }
             this.game.userData.stats.level = level
             document.querySelector(".level-up").style.display = "block"
@@ -1050,7 +1055,7 @@ class TurnCycle {
                 // Delay 100 ms so the player can see the computer having it's turn
                 await this.wait(1000)
 
-                if (selection > 5) {
+                if (selection > 5 || selection === 0) {
                     selection = 5
                 }
 

@@ -53,8 +53,9 @@
     <script defer src="./Scripts/init.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Smooch+Sans:wght@100;200;300;400;500;600;700&display=swap');
-    </style> 
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Smooch+Sans:wght@100;200;300;400;500;600;700&display=swap');
+    </style>
+        
 </head>
 <body class="color1">
     <div class="warning">
@@ -88,7 +89,6 @@
         <div class="deck hand color2"></div>
 
         <div class="game-over">
-            <h1 class="game-over-title">Victory</h1>
 
             <div class="reward">
                 <img class="open chest" src="./images/chest-lid.png">
@@ -102,14 +102,28 @@
             </div>
 
             <div class="level-up-section">
-                <img class="level-up-image" src="./images/level-up.png">
-                <p class="level-up-message"></p>
-                <p class="level-up-level"></p>
-                <button class="next-button-0">Next</button>
+                <div class="level-up-section-content">
+                    <p class="banner level-up-banner">Level Up</p>
+                    <p class="centered-text">You reached <span class="orange level-up-level-top">Level 5</span>.</p>
+                    <img class="level-up-image" src="./images/level-up-image.svg">
+                    <p class="level-up-level">Level 5</p>
+                    <p class="level-up-message">
+                        Congratulations, you collected  
+                        <span class="this-points">5,000</span> total points from playing
+                        games against the computer.
+                    </p>
+                    <div class="break"></div>
+                    <p class="centered-text"><span class="orange level-up-level-next">Level 6</span></p>
+                    <p class="centered-text level-up-level-next-text">
+                        Collect <span class="next-points">5,500</span> total points from games against the computer.
+                    </p>
+                    <button class="next-button-0">Next</button>
+                </div>
             </div>
 
             <div class="endscreen">
-                <h2 class="game-over-subtitle"> The Computer cowers in the shame of it's defeat.</h2>
+                <h1 class="game-over-title">Victory</h1>
+                <h2 class="game-over-subtitle">The Computer cowers in the shame of it's defeat.</h2>
                 <div class="game-over-buttons">
                     <button class="retry">Retry</button>
                     <button class="give-up">Home</button>
