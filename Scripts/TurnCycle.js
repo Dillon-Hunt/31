@@ -528,7 +528,7 @@ class TurnCycle {
         var level = Math.floor((this.game.userData.stats.points || 0) / 500) // Will change to be exponentially harder
 
         this.game.userData.achievements.reachLevel.value = level
-        
+
         if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
             this.game.analytics.setUserProperties({ level: level })
@@ -557,7 +557,7 @@ class TurnCycle {
         }
 
         // Achievements
-        if (this.game.userData.achievements.reachLevel.value > this.game.userData.achievements.reachLevel.goal) {
+        while (this.game.userData.achievements.reachLevel.value > this.game.userData.achievements.reachLevel.goal) {
             this.game.userData.achievements.reachLevel.level += 1
 
             this.game.analytics.logEvent("new_achievement", {
