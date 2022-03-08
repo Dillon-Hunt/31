@@ -12,6 +12,17 @@ class Game {
 
     async startGame() {
         this.userData = await getUserData()
+        if (this.userData.achievements.reachLevel === undefined) {
+            this.userData.achievements.reachLevel = {
+                name: "Master of Points",
+                level: 0,
+                goal: 5,
+                increment: 5,
+                value: 0,
+                text: "Congratulations, you reached level {GOAL}.",
+                nextText: "Reach level {GOAL} to unlock the next achievement.",
+            }
+        }
         document.querySelector(".loading").style.display = "none"
         this.analytics.setUserProperties({ level: this.userData.stats.level })
         this.analytics.logEvent("start_game")

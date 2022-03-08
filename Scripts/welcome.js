@@ -89,10 +89,20 @@ document.querySelector(".submit").onclick = async () => {
             achievements: {
                 winStreak: {
                     name: "Card Hero",
+                    level: 0,
                     goal: 5,
                     increment: 5,
                     value: 0,
-                    text: "Congratulations, you won {GOAL} consecutive games against the computer. ",
+                    text: "Congratulations, you won {GOAL} consecutive games against the computer.",
+                    nextText: "Win {GOAL} consecutive games against the computer.",
+                },
+                reachLevel: {
+                    name: "Master of Points",
+                    level: 0,
+                    goal: 5,
+                    increment: 5,
+                    value: 0,
+                    text: "Congratulations, you won {GOAL} consecutive games against the computer.",
                     nextText: "Win {GOAL} consecutive games against the computer.",
                 }
             }

@@ -527,6 +527,8 @@ class TurnCycle {
 
         var level = Math.floor((this.game.userData.stats.points || 0) / 500) // Will change to be exponentially harder
 
+        this.game.userData.achievements.reachLevel.value = level
+        
         if (level > (this.game.userData.stats.level || 0)) {
             // Case: level up
             this.game.analytics.setUserProperties({ level: level })
@@ -554,6 +556,20 @@ class TurnCycle {
             }, 5000)
         }
 
+        // Achievements
+        if (this.game.userData.achievements.reachLevel.value > this.game.userData.achievements.reachLevel.goal) {
+            this.game.userData.achievements.reachLevel.level += 1
+
+            this.game.analytics.logEvent("new_achievement", {
+                achievement: this.game.userData.achievements.reachLevel.name,
+                level: this.game.userData.achievements.reachLevel.level
+            })
+            
+            let achievement = new Achievement({ achievement: this.game.userData.achievements.reachLevel})
+            achievement.init(document.querySelector(".game-container"))
+            this.game.userData.achievements.reachLevel.goal += this.game.userData.achievements.reachLevel.increment
+        }
+
         if (this.game.userData.achievements.winStreak.value === this.game.userData.achievements.winStreak.goal) {
             this.game.userData.achievements.winStreak.level += 1
 
@@ -561,28 +577,15 @@ class TurnCycle {
                 achievement: this.game.userData.achievements.winStreak.name,
                 level: this.game.userData.achievements.winStreak.level
             })
-            document.querySelector(".game-over").style.display = "block"
 
-            document.querySelector(".next-button-1").onclick = () => {
-                document.querySelector(".achievement-section").style.display = "none"
-
-                if (!gameOver) {
-                    document.querySelector(".game-over").style.display = "block"
-                }
-            }
-
-            document.querySelector(".achievement-section").style.display = "block"
-            document.querySelector(".achievement-message").textContent = this.game.userData.achievements.winStreak.text.replaceAll("{GOAL}", this.game.userData.achievements.winStreak.goal)
+            let achievement = new Achievement({ achievement: this.game.userData.achievements.winStreak})
+            achievement.init(document.querySelector(".game-container"))
             this.game.userData.achievements.winStreak.goal += this.game.userData.achievements.winStreak.increment
-            document.querySelector(".achievement-name-next-text").textContent = this.game.userData.achievements.winStreak.nextText.replaceAll("{GOAL}", this.game.userData.achievements.winStreak.goal)
-
-            document.querySelector(".achievement-name-top").textContent = this.game.userData.achievements.winStreak.name + " Level " +  this.game.userData.achievements.winStreak.level
-            document.querySelector(".achievement-name").textContent = "Card Hero"
-            document.querySelector(".achievement-name-next").textContent = "Level " + parseInt(this.game.userData.achievements.winStreak.level + 1)
         }
 
         document.querySelector(".level-value").textContent = this.game.userData.stats.level
         document.querySelector(".points-value").textContent = this.game.userData.stats.points
+
 
         setUserData(this.game.userData)
     }
