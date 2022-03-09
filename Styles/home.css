@@ -12,20 +12,6 @@ h1 {
     color: inherit;
 }
 
-.collectables-button {
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    background: #2B2F44;
-    height: 60px;
-    border: none;
-    color: inherit;
-    margin: 0 auto;
-    width: 100px;
-    border-radius: 0 10px 0 10px;
-    display: block;
-}
-
 .save-button {
     padding: 10px;
     border: none;
@@ -231,4 +217,37 @@ label {
 
 .light-red > div {
     background-color: #FF7D7D;
+}
+
+.leaderboard-section {
+    padding-bottom: 20px;
+    max-height: 100px;
+    overflow: scroll;
+}
+
+.leaderboard-item {
+    position: relative;
+    height: 25px;
+    margin: -10px auto;
+    font-family: 'Roboto';
+    border-radius: 5px;
+}
+
+.leaderboard-username {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    text-align: left;
+}
+
+.leaderboard-points {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    text-align: right;
+    color: #e9e9e9;
 }

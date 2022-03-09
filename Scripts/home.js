@@ -1,4 +1,6 @@
 window.onload = async () => {
+    await createLeaderboard()
+    
     updateTheme() // Keep Theme Local
 
     const analytics = firebase.analytics()

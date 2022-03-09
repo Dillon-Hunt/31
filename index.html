@@ -42,28 +42,7 @@
         </div>
 
         <div class="home-section stats-section color2">
-
-            <div class="collectables color2">
-                <h2>Your Collectables</h2>
-                <button class="back-button color1">Back to Player Stats</button>
-                <h2 class="rarity rarity-common">Common</h2>
-                <div class="items common"></div>
-
-                <h2 class="rarity rarity-uncommon">Uncommon</h2>
-                <div class="items uncommon"></div>
-
-                <h2 class="rarity rarity-rare">Rare</h2>
-                <div class="items rare"></div>
-
-                <h2 class="rarity rarity-legendary">Legendary</h2>
-                <div class="items legendary"></div>
-
-                <h2 class="rarity rarity-epic color4">Epic</h2>
-                <div class="items epic"></div>
-            </div>
-
             <h2 class="player-stats">Player Stats</h2>
-            <button class="collectables-button color1">View Collectables</button>
             <h3 class="level-text">Level 0</h3>
             <div class="progress-bar-background color1"><div class="progress-bar-foreground level-progress color4"></div></div>
             <h4 class="level-subtext"></h4>
@@ -119,6 +98,29 @@
         </div>
 
         <button class="play-button play-button-section color2">Start New Game</button>
+    
+        <div class="home-section leaderboard-section color2">
+            <h2>Leaderboard</h2>
+        </div>
+    
+    
+        <div class="home-section fruits-section color2">
+            <h2>Your Collectables</h2>
+            <h2 class="rarity rarity-common">Common</h2>
+            <div class="items common"></div>
+
+            <h2 class="rarity rarity-uncommon">Uncommon</h2>
+            <div class="items uncommon"></div>
+
+            <h2 class="rarity rarity-rare">Rare</h2>
+            <div class="items rare"></div>
+
+            <h2 class="rarity rarity-legendary">Legendary</h2>
+            <div class="items legendary"></div>
+
+            <h2 class="rarity rarity-epic color4">Epic</h2>
+            <div class="items epic"></div>
+        </div>
     </section>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -149,10 +151,10 @@
     </script>
 
     <script src="./Scripts/firebase.js"></script>
-
-    <script src="./Scripts/home.js"></script>
     <script src="./Scripts/foods.js"></script>
     <script src="./Scripts/themeSelect.js"></script>
     <script src="./Scripts/theme.js"></script>
+    <script src="./Scripts/leaderboard.js"></script>
+    <script src="./Scripts/home.js"></script>
 </body>
 </html>
