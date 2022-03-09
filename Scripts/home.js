@@ -1,6 +1,6 @@
 window.onload = async () => {
     await createLeaderboard()
-    
+
     updateTheme() // Keep Theme Local
 
     const analytics = firebase.analytics()
@@ -74,14 +74,6 @@ document.querySelectorAll(".play-button").forEach(button => {
         window.location.href = "./computer.html"
     }
 })
-
-document.querySelector(".back-button").onclick = () => {
-    document.querySelector(".collectables").style.display = "none"
-}
-
-document.querySelector(".collectables-button").onclick = () => {
-    document.querySelector(".collectables").style.display = "block"
-}
 
 
 document.querySelector(".save-button").onclick = async () => {
