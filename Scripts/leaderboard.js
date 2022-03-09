@@ -6,10 +6,19 @@ async function createLeaderboard() {
 
     var index = 1
 
+    currentUserUsername = await firebase.firestore().collection("Users").doc(localStorage.getItem("userId")).get().then((doc) => {
+        const data = doc.data()
+        return data.userInfo.username
+    })
+
     allUserData.forEach(user => {
         element = document.createElement("div")
         element.classList.add("leaderboard-item")
-        element.classList.add("color1")
+        if (currentUserUsername === user.username) {
+            element.classList.add("color4")
+        } else {
+            element.classList.add("color1")
+        }
         element.innerHTML = (`
             <p class="leaderboard-username"><strong>${index}.</strong> ${user.username}</p>
             <p class="leaderboard-points">${numberWithCommas(user.points)}<p>

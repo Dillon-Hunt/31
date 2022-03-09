@@ -1,8 +1,4 @@
 window.onload = async () => {
-    await createLeaderboard()
-
-    updateTheme() // Keep Theme Local
-
     const analytics = firebase.analytics()
     analytics.logEvent("home_page")
 
@@ -10,6 +6,10 @@ window.onload = async () => {
 
 
     if (userData !== "Error") {
+        
+        await createLeaderboard()
+        updateTheme() // Keep Theme Local
+
         document.querySelector(".level-text").textContent = "Level " + userData.stats.level
 
         getFoods().forEach(food => { // Repeat for achievements
