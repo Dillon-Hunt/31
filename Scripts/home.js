@@ -77,17 +77,34 @@ document.querySelectorAll(".play-button").forEach(button => {
 
 
 document.querySelector(".save-button").onclick = async () => {
-    userData = await getUserData()
 
-    userData.userInfo.name = document.querySelector(".name").value !== "" ? document.querySelector(".name").value : userData.userInfo.name 
-    userData.userInfo.username = document.querySelector(".username").value !== "" ? document.querySelector(".username").value : userData.userInfo.username
+    const snapshot = await firebase.firestore().collection('Users').get().then((snapshotData) => {
+        return snapshotData.docs.map(doc => doc.data())
+    })
 
-    document.querySelector(".name").placeholder = userData.userInfo.name
-    document.querySelector(".name").value = ""
-    document.querySelector(".username").placeholder = userData.userInfo.username
-    document.querySelector(".username").value = ""
+    var usernameTaken = false
+    
+    snapshot.forEach(user => {
+        if (user.userInfo.username.replaceAll(" ", "").toLowerCase() === document.querySelector(".username").value.replaceAll(" ", "").toLowerCase()) {
+            usernameTaken = true
+        }
+    })
 
-    setUserData(userData)
+    if (usernameTaken) {
+        alert("Username is already taken, try a different one.")
+    } else {
+        userData = await getUserData()
 
-    localStorage.accessible = document.querySelector(".accessability").checked
+        userData.userInfo.name = document.querySelector(".name").value !== "" ? document.querySelector(".name").value : userData.userInfo.name 
+        userData.userInfo.username = document.querySelector(".username").value !== "" ? document.querySelector(".username").value : userData.userInfo.username
+
+        document.querySelector(".name").placeholder = userData.userInfo.name
+        document.querySelector(".name").value = ""
+        document.querySelector(".username").placeholder = userData.userInfo.username
+        document.querySelector(".username").value = ""
+
+        setUserData(userData)
+
+        localStorage.accessible = document.querySelector(".accessability").checked
+    }
 }

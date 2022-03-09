@@ -34,13 +34,12 @@ document.querySelector(".sign-in-submit").onclick = () => {
 }
 
 document.querySelector(".submit").onclick = async () => {
-    
     const snapshot = await firebase.firestore().collection('Users').get().then((snapshotData) => {
         return snapshotData.docs.map(doc => doc.data())
     })
 
     var usernameTaken = false
-    
+
     snapshot.forEach(user => {
         if (user.userInfo.username.replaceAll(" ", "").toLowerCase() === document.querySelector(".username").value.replaceAll(" ", "").toLowerCase()) {
             usernameTaken = true
