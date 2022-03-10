@@ -23,6 +23,18 @@ class Game {
                 nextText: "Reach level {GOAL} to unlock the next achievement.",
             }
         }
+        if (this.userData.achievements.playGames == undefined) {
+            this.userData.achievements.playGames = {
+                name: "Legend",
+                level: 0,
+                goal: 25,
+                increment: 25,
+                value: 0,
+                text: "Awesome, you played {GOAL} games against the computer.",
+                nextText: "Play a total of {GOAL} games against the computer.",
+                image: "Achievement-3"
+            }
+        }
         document.querySelector(".loading").style.display = "none"
         this.analytics.setUserProperties({ level: this.userData.stats.level })
         this.analytics.logEvent("start_game")

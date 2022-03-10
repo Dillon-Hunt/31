@@ -504,6 +504,7 @@ class TurnCycle {
 
         // Add new data to userData and save
         this.game.userData.stats.games += 1
+        this.game.userData.achievements.playGames.value = this.game.userData.stats.games
         setUserData(this.game.userData)
 
         // Update points & level
@@ -512,6 +513,9 @@ class TurnCycle {
 
     updatePoints(gameOver) {
         // Update points & level
+
+        this.game.userData.achievements.playGames.value = this.game.userData.stats.games
+        
         this.points = this.points || (this.game.userData.stats.points || 0)
 
         if (this.points > (this.game.userData.stats.points || 0)) {
@@ -570,7 +574,7 @@ class TurnCycle {
             this.game.userData.achievements.reachLevel.goal += this.game.userData.achievements.reachLevel.increment
         }
 
-        if (this.game.userData.achievements.winStreak.value >= this.game.userData.achievements.winStreak.goal) {
+        while (this.game.userData.achievements.winStreak.value >= this.game.userData.achievements.winStreak.goal) {
             this.game.userData.achievements.winStreak.level += 1
 
             this.game.analytics.logEvent("new_achievement", {
@@ -581,6 +585,19 @@ class TurnCycle {
             let achievement = new Achievement({ achievement: this.game.userData.achievements.winStreak})
             achievement.init(document.querySelector(".game-container"))
             this.game.userData.achievements.winStreak.goal += this.game.userData.achievements.winStreak.increment
+        }
+
+        while (this.game.userData.achievements.playGames.value >= this.game.userData.achievements.playGames.goal) {
+            this.game.userData.achievements.playGames.level += 1
+
+            this.game.analytics.logEvent("new_achievement", {
+                achievement: this.game.userData.achievements.playGames.name,
+                level: this.game.userData.achievements.playGames.level
+            })
+
+            let achievement = new Achievement({ achievement: this.game.userData.achievements.playGames})
+            achievement.init(document.querySelector(".game-container"))
+            this.game.userData.achievements.playGames.goal += this.game.userData.achievements.playGames.increment
         }
 
         document.querySelector(".level-value").textContent = this.game.userData.stats.level

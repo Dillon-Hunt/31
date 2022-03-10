@@ -20,12 +20,13 @@ async function signUp(email, password, userData) {
             var errorMessage = error.message;
 
             if (errorCode == 'auth/weak-password') {
-            alert('The password is too weak.');
+                alert('The password is too weak.');
             } else {
-            alert(errorMessage);
+                alert(errorMessage);
             }
 
-            console.log(error);
+            waiting = false
+            document.querySelector(".submit").style.opacity = 1
         });
     })
 }

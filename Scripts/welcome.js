@@ -38,6 +38,7 @@ document.querySelector(".sign-in-submit").onclick = () => {
 document.querySelector(".submit").onclick = async () => {
     if (!waiting) {
         waiting = true
+        document.querySelector(".submit").style.opacity = 0
         const snapshot = await firebase.firestore().collection('Users').get().then((snapshotData) => {
             return snapshotData.docs.map(doc => doc.data())
         })
@@ -53,6 +54,7 @@ document.querySelector(".submit").onclick = async () => {
         if (usernameTaken) {
             alert("Username is already taken, try a different one.")
             waiting = false
+            document.querySelector(".submit").style.opacity = 1
         } else {
             const analytics = firebase.analytics();
             analytics.logEvent("signup")
@@ -126,12 +128,25 @@ document.querySelector(".submit").onclick = async () => {
                             text: "Congratulations, you won {GOAL} consecutive games against the computer.",
                             nextText: "Win {GOAL} consecutive games against the computer.",
                             image: "Achievement-2"
+                        },
+                        playGames: {
+                            name: "Legend",
+                            level: 0,
+                            goal: 25,
+                            increment: 25,
+                            value: 0,
+                            text: "Awesome, you played {GOAL} games against the computer.",
+                            nextText: "Play a total of {GOAL} games against the computer.",
+                            image: "Achievement-3"
                         }
                     }
                 }
                 await signUp(document.querySelector(".email").value, document.querySelector(".password").value, userData)
                 localStorage.accessible = document.querySelector(".accessability").checked
                 window.location.href = "./tutorial.html"
+            } else {
+                waiting = false
+                document.querySelector(".submit").style.opacity = 1
             }
         }
     }
