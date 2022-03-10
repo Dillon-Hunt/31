@@ -110,6 +110,7 @@ document.querySelector(".submit").onclick = async () => {
                         value: 0,
                         text: "Congratulations, you won {GOAL} consecutive games against the computer.",
                         nextText: "Win {GOAL} consecutive games against the computer.",
+                        image: "Achievement-1"
                     },
                     reachLevel: {
                         name: "Master of Points",
@@ -119,6 +120,7 @@ document.querySelector(".submit").onclick = async () => {
                         value: 0,
                         text: "Congratulations, you won {GOAL} consecutive games against the computer.",
                         nextText: "Win {GOAL} consecutive games against the computer.",
+                        image: "Achievement-2"
                     }
                 }
             }
