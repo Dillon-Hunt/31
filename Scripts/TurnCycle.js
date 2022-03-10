@@ -557,20 +557,20 @@ class TurnCycle {
         }
 
         // Achievements
-        while (this.game.userData.achievements.reachLevel.value > this.game.userData.achievements.reachLevel.goal) {
+        while (this.game.userData.achievements.reachLevel.value >= this.game.userData.achievements.reachLevel.goal) {
             this.game.userData.achievements.reachLevel.level += 1
 
             this.game.analytics.logEvent("new_achievement", {
                 achievement: this.game.userData.achievements.reachLevel.name,
                 level: this.game.userData.achievements.reachLevel.level
             })
-            
+
             let achievement = new Achievement({ achievement: this.game.userData.achievements.reachLevel})
             achievement.init(document.querySelector(".game-container"))
             this.game.userData.achievements.reachLevel.goal += this.game.userData.achievements.reachLevel.increment
         }
 
-        if (this.game.userData.achievements.winStreak.value === this.game.userData.achievements.winStreak.goal) {
+        if (this.game.userData.achievements.winStreak.value >= this.game.userData.achievements.winStreak.goal) {
             this.game.userData.achievements.winStreak.level += 1
 
             this.game.analytics.logEvent("new_achievement", {

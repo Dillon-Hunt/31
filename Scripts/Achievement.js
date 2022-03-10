@@ -11,7 +11,7 @@ class Achievement {
             <div class="achievement-section-content">
                 <p class="banner achievement-banner">New Achievement</p>
                 <p class="centered-text">You earned <span class="orange achievement-name-top">${this.achievement.name} Level ${this.achievement.level}</span>.</p>
-                <img class="achievement-image" src="./images/${achievement.image === undefined ? "Achievement-1" : achievement.image}.svg">
+                <img class="achievement-image" src="./images/${this.achievement.image === undefined ? "Achievement-1" : this.achievement.image}.svg">
                 <p class="achievement-name">${this.achievement.name}</p>
                 <p class="achievement-message">${this.achievement.text.replaceAll("{GOAL}", this.achievement.goal)}</p>
                 <div class="break"></div>
