@@ -108,6 +108,9 @@ class HomeAchievement {
                 }
                 document.querySelector(".next-button").onclick = () => {
                     document.querySelector(".reward").style.display = "none"
+                    document.querySelector(".fruit").style.animation = ""
+                    document.querySelector(".fruit").style.top = "90px"
+                    document.querySelector(".reward").classList.remove("received")
                 }
             }
         } else {
