@@ -12,12 +12,13 @@
     <link rel="stylesheet" type="text/css" href="./Styles/home-desktop.css" media="only screen and (min-width: 1001px) and (min-height: 651px)">
     <link rel="stylesheet" href="./Styles/cards.css" type="text/css" />
     <link rel="stylesheet" href="./Styles/foods.css" type="text/css" />
+    <link rel="stylesheet" href="./Styles/homeAchievement.css" type="text/css" />
 
     <link rel="stylesheet" type="text/css" href="./Styles/landscape.css" media="screen and (orientation: landscape) and (max-device-width: 1000px)">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Shizuru&display=swap');
-    </style> 
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Smooch+Sans:wght@100;200;300;400;500;600;700&display=swap');
+    </style>
 </head>
 <body class="color1">
     <div class="warning">
@@ -103,7 +104,6 @@
             <h2>Leaderboard</h2>
         </div>
     
-    
         <div class="home-section fruits-section color2">
             <h2>Your Collectables</h2>
             <h2 class="rarity rarity-common">Common</h2>
@@ -121,7 +121,24 @@
             <h2 class="rarity rarity-epic color4">Epic</h2>
             <div class="items epic"></div>
         </div>
+
+        <div class="home-section achievements-section color2">
+            <h2 class="centered-text">Achievements</h2>
+            <div class="achievements">
+            </div>
+        </div>
     </section>
+
+    <div class="reward">
+        <img class="open chest" src="./images/chest-lid.png">
+        <img class="open fruit" src="./images/strawberry.png">
+        <img class="open chest" src="./images/chest-base.png">
+        <img class="closed" src="./images/chest-closed.png">
+        <p class="found-message"></p>
+        <p class="found-message-tier"></p>
+        <button class="next-button">Next</button>
+        <button class="open-button">Open</button>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
@@ -151,6 +168,7 @@
     </script>
 
     <script src="./Scripts/firebase.js"></script>
+    <script src="./Scripts/HomeAchievement.js"></script>
     <script src="./Scripts/foods.js"></script>
     <script src="./Scripts/themeSelect.js"></script>
     <script src="./Scripts/theme.js"></script>

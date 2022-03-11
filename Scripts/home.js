@@ -8,6 +8,21 @@ window.onload = async () => {
     if (userData !== "Error") {
         
         await createLeaderboard()
+
+        var keys = []
+
+        var achievements = Object.keys(userData.achievements).map(key => {
+            keys.push(key)
+            return userData.achievements[key]
+        });
+
+        var index = 0
+        achievements.forEach(async achievement => {
+            let newAchievement = new HomeAchievement({ achievement: achievement, userData, key: keys[index]})
+            index++
+            await newAchievement.init(document.querySelector(".achievements"))
+        })
+
         updateTheme() // Keep Theme Local
 
         document.querySelector(".level-text").textContent = "Level " + userData.stats.level

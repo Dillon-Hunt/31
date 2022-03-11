@@ -1,0 +1,146 @@
+body {
+    position: relative !important;
+}
+
+.achievements {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    align-items: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.achievement-section {
+    padding: 10px;
+}
+
+.achievement-image {
+    width: 100px;
+}
+
+.achievement-name {
+    font-family: 'Roboto';
+    margin: 10px 0;
+    height: 1em;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.achievement-level {
+    font-family: 'Roboto';
+    color: #FF7A00 !important;
+    margin: -5px 0 5px 0;
+    height: 1em;
+    text-align: center;
+}
+
+.achievement-message {
+    font-family: 'Roboto';
+    margin: 5px 0;
+    height: 2.5em;
+    text-align: center;
+}
+
+.reward-button {
+    width: 131px;
+    height: 2.5em;
+    margin-top: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.reward {
+    color: #000 !important;
+    font-family: 'Roboto' !important;
+    position: absolute;
+    display: none;
+    bottom: 50vh;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-50%, 50%);
+    width: calc(300px + 1vh);
+    height: calc(345px + 1.5vh);
+    border-radius: 5px;
+    z-index: 5;
+    box-shadow: 0 0 10px 2px #00000025;
+}
+
+.reward > img {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    width: 135px;
+    height: 150px;
+    image-rendering: pixelated;
+}
+
+.reward > .found-message {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    left: 50%;
+    top: 170px;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    width: 90%;
+}
+
+.reward > .found-message-tier {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    left: 50%;
+    top: 135px;
+    font-size: 20px;
+    transform: translateX(-50%);
+    position: absolute;
+    color: #000000;
+    text-align: center;
+    width: 90%;
+}
+
+.reward > img.open {
+    display: none;
+}
+
+.reward > img.fruit {
+    width: 60px;
+    height: 60px;
+    top: 150px;
+}
+
+.reward.received {
+    transition: 1s;
+}
+
+@keyframes rise {
+    100% {
+        top: 90px;
+    }
+}
+
+.reward > button {
+    position: absolute;
+    width: 131px;
+    height: 59px;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+}
