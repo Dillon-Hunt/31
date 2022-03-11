@@ -42,11 +42,11 @@ class HomeAchievement {
                         // Add food to foodsArray
 
                         if (foods[i].tier === "legendary") {
-                            for (var j = 0; j < 3; j++) {
+                            for (var j = 0; j <= 3; j++) {
                                 foodsArray.push(foods[i])
                             }
                         } else if ( foods[i].tier === "epic") {
-                            for (var j = 0; j < 10; j++) {
+                            for (var j = 0; j <= 10; j++) {
                                 foodsArray.push(foods[i])
                             }
                         } else {
