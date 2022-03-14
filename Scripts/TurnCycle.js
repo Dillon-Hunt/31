@@ -418,7 +418,7 @@ class TurnCycle {
                 if (randomFood.tier === "common") {
                     document.querySelector(".reward").style.backgroundColor = "#4271ff"
                 } else if (randomFood.tier === "uncommon") {
-                    document.querySelector(".reward").style.backgroundColor = "#c642ff"
+                    document.querySelector(".reward").style.backgroundColor = "#54c461"
                 } else if (randomFood.tier === "rare") {
                     document.querySelector(".reward").style.backgroundColor = "#ff9242"
                 } else if (randomFood.tier === "legendary") {
