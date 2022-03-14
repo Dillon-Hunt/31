@@ -416,7 +416,7 @@ class TurnCycle {
                 })
                 document.querySelector(".reward").classList.add("received")
                 if (randomFood.tier === "common") {
-                    document.querySelector(".reward").style.backgroundColor = "#4271ff"
+                    document.querySelector(".reward").style.backgroundColor = "#c642ff"
                 } else if (randomFood.tier === "uncommon") {
                     document.querySelector(".reward").style.backgroundColor = "#ff424b"
                 } else if (randomFood.tier === "rare") {
@@ -425,6 +425,8 @@ class TurnCycle {
                     document.querySelector(".reward").style.backgroundColor = "#dec209"
                 } else if (randomFood.tier === "epic") {
                     document.querySelector(".reward").style.backgroundColor = JSON.parse(localStorage.getItem("theme")).color4
+                } else if (randomFood.tier === "impossible") {
+                    document.querySelector(".reward").style.backgroundColor = "#4271ff"
                 }
                 document.querySelector(".fruit").style.animation = "rise 1s ease-in-out"
                 document.querySelector(".fruit").src = `./images/${randomFood.name.toLowerCase()}.png`

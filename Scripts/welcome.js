@@ -105,7 +105,8 @@ document.querySelector(".submit").onclick = async () => {
                         pancakes: 0,
                         cake: 0,
                         icecream: 0,
-                        bacon: 0
+                        bacon: 0,
+                        goldenapple: 0,
                     }, 
 
                     achievements: {

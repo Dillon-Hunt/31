@@ -9,6 +9,11 @@ window.onload = async () => {
         
         await createLeaderboard()
 
+        if (userData.foods.goldenapple === undefined) {
+            userData.foods.goldenapple = 0
+            setUserData(userData)
+        }
+
         var keys = []
 
         var achievements = Object.keys(userData.achievements).map(key => {
@@ -27,7 +32,7 @@ window.onload = async () => {
 
         document.querySelector(".level-text").textContent = "Level " + userData.stats.level
 
-        getFoods().forEach(food => { // Repeat for achievements
+        getFoods().forEach(food => {
             element = document.createElement("div")
             element.classList.add("item")
             amount = userData.foods[food.name.toLowerCase().replaceAll(" ", "")]

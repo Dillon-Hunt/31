@@ -13,7 +13,7 @@
 }
 
 .rarity-uncommon {  
-    background-color: #ff424b;
+    background-color: #c642ff;
 }
 
 .rarity-rare {
@@ -26,6 +26,10 @@
 
 .rarity-epic {
     background-color: #8742ff;
+}
+
+.rarity-impossible {
+    background-color: #ff4242;
 }
 
 .items {
